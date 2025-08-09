@@ -32,14 +32,15 @@ export const metadata = {
   openGraph: {
     title: "Full-stack Developer - Renie Namocot",
     description: "Professional full stack developer specializing in Laravel, Next.js, React, WordPress, and Shopify. Expert in custom themes, plugins, and modern web technologies. Available for remote work worldwide.",
-    url: 'https://renienamocot.com', // Update with your actual domain
+    url: 'https://www.renienamocot.com',
     siteName: 'Renie Namocot - Portfolio',
     images: [
       {
-        url: '/social-share.PNG',
+        url: 'https://www.renienamocot.com/social-share.PNG',
         width: 1200,
         height: 630,
         alt: 'Renie Namocot - Full Stack Developer Portfolio',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -50,7 +51,7 @@ export const metadata = {
     title: "Full-stack Developer - Renie Namocot",
     description: "Professional full stack developer specializing in Laravel, Next.js, React, WordPress, and Shopify. Expert in custom themes, plugins, and modern web technologies. Available for remote work worldwide.",
     creator: '@renie',
-    images: ['/social-share.PNG'],
+    images: ['https://www.renienamocot.com/social-share.PNG'],
   },
   icons: {
     icon: '/logo.PNG',
@@ -63,6 +64,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Explicit meta tags for social sharing */}
+        <meta property="og:image" content="https://www.renienamocot.com/social-share.PNG" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:image" content="https://www.renienamocot.com/social-share.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white text-gray-900`}>
         <Header />
         <main>{children}</main>
