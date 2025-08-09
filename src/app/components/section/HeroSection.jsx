@@ -27,15 +27,13 @@ export default function HeroSection() {
 
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-gray-900">Crafting</span>
+                <span className="text-gray-900">Building </span>
                 <br />
-                <span className="text-gray-600">Digital</span>
-                <br />
-                <span className="text-gray-900">Experiences</span>
+                <span className="text-gray-600">Impactful Digital Experiences</span>
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-600 max-w-lg leading-relaxed">
-                Full-stack developer specialized in Laravel, React, WordPress & Shopify. Expert in creating custom themes, plugins, and modern web applications with exceptional user experiences.
+               I’m a full-stack developer specializing in React, Next.js, and Laravel. With a focus on CMS automation (WordPress, Shopify), I develop custom themes, plugins, and web applications that prioritize speed, scalability, and seamless user experiences. My passion lies in transforming ideas into modern, efficient, and user-friendly digital solutions.
               </p>
             </div>
 
@@ -83,7 +81,7 @@ export default function HeroSection() {
                   src="/images/profile/ren.png"
                   alt="Renie Namocot - Full Stack Developer"
                   fill
-                  className="object-cover object-top rounded-2xl"
+                  className="object-cover object-center rounded-2xl"
                   priority
                 />
               </div>
