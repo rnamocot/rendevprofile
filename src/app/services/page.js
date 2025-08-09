@@ -174,17 +174,17 @@ export default function ServicesPage() {
                     </div>
                   )}
                   
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 w-14 h-14 bg-gray-900 rounded-xl flex items-center justify-center">
-                      <service.icon className="w-7 h-7 text-white" />
+                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gray-900 rounded-xl flex items-center justify-center">
+                      <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
                     
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900">
+                    <div className="flex-1 w-full">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-0">
                           {service.title}
                         </h3>
-                        <span className="text-gray-900 font-bold text-xl">
+                        <span className="text-gray-900 font-bold text-lg sm:text-xl">
                           {service.price}
                         </span>
                       </div>
@@ -248,9 +248,9 @@ export default function ServicesPage() {
             <div className="max-w-4xl mx-auto">
               <div className="space-y-8">
                 {process.map((item, index) => (
-                  <div key={index} className="flex gap-8 items-start">
+                  <div key={index} className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
                         {item.step}
                       </div>
                     </div>

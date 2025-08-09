@@ -241,11 +241,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <MessageSquare className="w-5 h-5 text-gray-600" />
+                      <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="font-medium text-gray-900 mb-1">Let's Chat</h3>
                       <p className="text-gray-600 text-sm">
                         I'm available for video calls, phone conversations, or just a simple email exchange.
@@ -253,11 +253,11 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-5 h-5 text-gray-600" />
+                      <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="font-medium text-gray-900 mb-1">Schedule a Call</h3>
                       <p className="text-gray-600 text-sm">
                         Prefer to talk? We can schedule a consultation call at your convenience.
@@ -265,11 +265,11 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-gray-600" />
+                      <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="font-medium text-gray-900 mb-1">Quick Response</h3>
                       <p className="text-gray-600 text-sm">
                         I typically respond to all inquiries within 24 hours, often much sooner.

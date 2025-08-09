@@ -48,18 +48,18 @@ export default function ServicesSection() {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow duration-200">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-gray-900 rounded-xl flex items-center justify-center">
-                  <service.icon className="w-7 h-7 text-white" />
+            <div key={index} className="bg-white rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-shadow duration-200">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gray-900 rounded-xl flex items-center justify-center">
+                  <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900">
+                <div className="flex-1 w-full">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-0">
                       {service.title}
                     </h3>
-                    <span className="text-gray-900 font-bold text-lg">
+                    <span className="text-gray-900 font-bold text-base sm:text-lg">
                       {service.price}
                     </span>
                   </div>
