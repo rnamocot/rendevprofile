@@ -273,9 +273,39 @@ export default function PortfolioPage() {
 
   const categories = ['All', 'E-commerce', 'Healthcare', 'Construction', 'Service Business', 'Logistics', 'Education', 'SaaS Platform', 'Developer Tools'];
 
-  const filteredProjects = activeCategory === 'All' 
+  // Priority projects to show at the top
+  const priorityProjects = ['Zendz Tools - Developer Toolkit', 'Premium Graduate - Vocational Placement', 'Cloud Blvd - E-commerce Platform'];
+  
+  const sortProjectsByPriority = (projectList) => {
+    return projectList.sort((a, b) => {
+      const aIndex = priorityProjects.indexOf(a.title);
+      const bIndex = priorityProjects.indexOf(b.title);
+      
+      // If both projects are priority projects, sort by their priority order
+      if (aIndex !== -1 && bIndex !== -1) {
+        return aIndex - bIndex;
+      }
+      
+      // If only 'a' is a priority project, put it first
+      if (aIndex !== -1) {
+        return -1;
+      }
+      
+      // If only 'b' is a priority project, put it first
+      if (bIndex !== -1) {
+        return 1;
+      }
+      
+      // If neither are priority projects, maintain original order
+      return 0;
+    });
+  };
+
+  const baseFilteredProjects = activeCategory === 'All' 
     ? projects 
     : projects.filter(project => project.category === activeCategory);
+    
+  const filteredProjects = sortProjectsByPriority([...baseFilteredProjects]);
 
   const stats = [
     { number: '500+', label: 'Projects Completed' },
