@@ -36,10 +36,10 @@ export const metadata = {
     siteName: 'Renie Namocot - Portfolio',
     images: [
       {
-        url: '/images/profile/me.png',
+        url: '/social-share.png',
         width: 1200,
         height: 630,
-        alt: 'Renie Namocot - Full Stack Developer',
+        alt: 'Renie Namocot - Full Stack Developer Portfolio',
       },
     ],
     locale: 'en_US',
@@ -50,7 +50,7 @@ export const metadata = {
     title: "Full-stack Developer - Renie Namocot",
     description: "Professional full stack developer specializing in Laravel, Next.js, React, WordPress, and Shopify. Expert in custom themes, plugins, and modern web technologies. Available for remote work worldwide.",
     creator: '@renie',
-    images: ['/images/profile/me.png'],
+    images: ['/social-share.png'],
   },
   icons: {
     icon: '/logo.PNG',
