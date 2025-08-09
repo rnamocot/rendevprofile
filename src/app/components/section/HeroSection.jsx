@@ -69,7 +69,7 @@ export default function HeroSection() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900 mb-1">100%</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider">Success Rate</div>
+                <div className="text-sm text-gray-600 uppercase tracking-wider">Success Rate on Upwork</div>
               </div>
             </div>
           </div>
