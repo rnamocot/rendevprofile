@@ -29,16 +29,15 @@ export default function Header() {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto flex justify-between items-center px-6 lg:px-8 h-16">
-        <div className="flex items-center space-x-3">
+        <a href="/" className="flex items-center">
           <Image 
             src="/logo.PNG" 
             alt="Renie Namocot" 
             width={32} 
             height={32} 
-            className="rounded-full"
+            className="rounded-full hover:scale-105 transition-transform duration-200"
           />
-          <span className="font-bold text-lg text-gray-900">Renie</span>
-        </div>
+        </a>
 
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (

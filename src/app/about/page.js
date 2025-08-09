@@ -134,6 +134,7 @@ export default function AboutPage() {
           </div>
         </section>
 
+
         {/* Skills Section */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6 lg:px-8">
