@@ -125,7 +125,7 @@ export default function ServicesPage() {
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white">
           <div className="container mx-auto px-6 lg:px-8 text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Professional Web Development Services
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -154,14 +154,14 @@ export default function ServicesPage() {
         <section id="services" className="py-24 bg-white">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">My Services</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Services</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Choose from a range of professional services designed to meet your specific needs 
                 and help your business grow in the digital landscape.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {services.map((service, index) => (
                 <div key={index} className={`relative bg-white rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-200 ${
                   service.popular ? 'border-gray-900 shadow-lg' : 'border-gray-200 hover:border-gray-300'
@@ -238,8 +238,8 @@ export default function ServicesPage() {
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">My Process</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Process</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 A proven methodology that ensures your project is delivered on time, 
                 within budget, and exceeds your expectations.
               </p>
@@ -273,13 +273,13 @@ export default function ServicesPage() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Don't just take my word for it. Here's what my clients say about working with me.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="bg-gray-50 rounded-2xl p-8">
                   <div className="flex gap-1 mb-4">
@@ -303,8 +303,8 @@ export default function ServicesPage() {
         {/* CTA Section */}
         <section className="py-24 bg-gray-900 text-white">
           <div className="container mx-auto px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Let's discuss your requirements and create a solution that drives results. 
               Get a free consultation and project estimate.
             </p>

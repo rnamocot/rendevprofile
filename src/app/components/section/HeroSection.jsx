@@ -26,7 +26,7 @@ export default function HeroSection() {
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-gray-900">Crafting</span>
                 <br />
                 <span className="text-gray-600">Digital</span>
@@ -34,7 +34,7 @@ export default function HeroSection() {
                 <span className="text-gray-900">Experiences</span>
               </h1>
               
-              <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 max-w-lg leading-relaxed">
                 Full-stack developer specialized in Laravel, React, WordPress & Shopify. Expert in creating custom themes, plugins, and modern web applications with exceptional user experiences.
               </p>
             </div>
@@ -58,18 +58,18 @@ export default function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100">
-              <div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">500+</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider">Projects</div>
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-gray-100">
+              <div className="text-center sm:text-left">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">500+</div>
+                <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Projects</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">5+</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider">Years Exp</div>
+              <div className="text-center sm:text-left">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">5+</div>
+                <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Years Exp</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">100%</div>
-                <div className="text-sm text-gray-600 uppercase tracking-wider">Success Rate on Upwork</div>
+              <div className="text-center sm:text-left">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">100%</div>
+                <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Success Rate</div>
               </div>
             </div>
           </div>
@@ -90,16 +90,16 @@ export default function HeroSection() {
             </div>
             
             {/* Floating elements */}
-            <div className="absolute top-8 -right-4 bg-white p-4 rounded-xl shadow-lg animate-floating-slow">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-sm font-medium text-gray-700">Online</span>
+            <div className="absolute top-8 -right-2 sm:-right-4 bg-white p-3 sm:p-4 rounded-xl shadow-lg animate-floating-slow">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
+                <span className="text-xs sm:text-sm font-medium text-gray-700">Online</span>
               </div>
             </div>
             
-            <div className="absolute bottom-8 -left-4 bg-gray-900 text-white p-4 rounded-xl shadow-lg animate-floating-fast">
+            <div className="absolute bottom-8 -left-2 sm:-left-4 bg-gray-900 text-white p-3 sm:p-4 rounded-xl shadow-lg animate-floating-fast">
               <div className="text-xs uppercase tracking-wider mb-1">Latest Project</div>
-              <div className="font-semibold">E-commerce Platform</div>
+              <div className="text-sm sm:text-base font-semibold">E-commerce Platform</div>
             </div>
           </div>
         </div>

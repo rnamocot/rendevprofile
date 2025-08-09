@@ -138,7 +138,7 @@ export default function ContactSection() {
     <section id="contact" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Let's Work Together
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -147,7 +147,7 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
@@ -198,7 +198,7 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *

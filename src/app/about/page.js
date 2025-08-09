@@ -99,21 +99,21 @@ export default function AboutPage() {
           <div className="container mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                   About Me
                 </h1>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
                   I'm a passionate full-stack developer dedicated to creating exceptional 
                   digital experiences that drive business growth and user satisfaction.
                 </p>
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
-                    <div className="text-gray-600">Projects Completed</div>
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                  <div className="text-center sm:text-left">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">500+</div>
+                    <div className="text-sm sm:text-base text-gray-600">Projects Completed</div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">5+</div>
-                    <div className="text-gray-600">Years Experience</div>
+                  <div className="text-center sm:text-left">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">5+</div>
+                    <div className="text-sm sm:text-base text-gray-600">Years Experience</div>
                   </div>
                 </div>
               </div>
@@ -139,14 +139,14 @@ export default function AboutPage() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Core Expertise</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Core Expertise</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Comprehensive skill set covering the entire web development lifecycle, 
                 from concept to deployment and maintenance.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {skills.map((skill, index) => (
                 <div key={index} className="group">
                   <div className="bg-gray-50 rounded-2xl p-8 h-full hover:bg-gray-100 transition-colors duration-200">

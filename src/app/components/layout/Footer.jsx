@@ -35,10 +35,10 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
           {/* Brand & Description */}
-          <div className="md:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">Renie Namocot</h3>
+          <div className="sm:col-span-2 md:col-span-1">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">Renie Namocot</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Full-stack developer creating modern, scalable web applications 
               with exceptional user experiences.
@@ -93,11 +93,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
             � {currentYear} Renie Namocot. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-gray-400">
+          <div className="flex gap-4 sm:gap-6 text-sm text-gray-400">
             <a href="/privacy" className="hover:text-white transition-colors duration-200">
               Privacy Policy
             </a>

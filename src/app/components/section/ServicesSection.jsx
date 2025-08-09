@@ -37,7 +37,7 @@ export default function ServicesSection() {
     <section id="services" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Services
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -46,7 +46,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow duration-200">
               <div className="flex items-start gap-6">

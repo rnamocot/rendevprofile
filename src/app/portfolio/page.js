@@ -291,7 +291,7 @@ export default function PortfolioPage() {
         <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 My Portfolio
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -301,10 +301,10 @@ export default function PortfolioPage() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-16">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                     {stat.number}
                   </div>
                   <div className="text-gray-600 uppercase tracking-wider text-sm">
@@ -339,7 +339,7 @@ export default function PortfolioPage() {
             {/* Projects */}
             <div className="space-y-24">
               {filteredProjects.map((project, index) => (
-                <div key={index} className={`grid lg:grid-cols-2 gap-16 items-center ${
+                <div key={index} className={`grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
                   index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
                 }`}>
                   {/* Project Image */}
@@ -379,7 +379,7 @@ export default function PortfolioPage() {
                       </span>
                     </div>
                     
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                       {project.title}
                     </h2>
                     
@@ -390,7 +390,7 @@ export default function PortfolioPage() {
                     {/* Key Features */}
                     <div className="mb-8">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h3>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {project.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center gap-2 text-gray-600">
                             <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
@@ -436,8 +436,8 @@ export default function PortfolioPage() {
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Technologies I Use</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Technologies I Use</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 I work with modern technologies and frameworks to deliver high-quality, 
                 scalable solutions that meet your business needs.
               </p>
@@ -483,8 +483,8 @@ export default function PortfolioPage() {
         {/* CTA Section */}
         <section className="py-24 bg-gray-900 text-white">
           <div className="container mx-auto px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-6">Like What You See?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Like What You See?</h2>
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Let's discuss your project and create something amazing together. 
               I'm available for both short-term projects and long-term collaborations.
             </p>

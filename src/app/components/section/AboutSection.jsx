@@ -33,7 +33,7 @@ export default function AboutSection() {
     <section id="about" className="py-24 bg-white">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             About Me
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -42,7 +42,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-20">
           {skills.map((skill, index) => (
             <div key={index} className="group">
               <div className="bg-gray-50 rounded-2xl p-8 h-full hover:bg-gray-100 transition-colors duration-200">

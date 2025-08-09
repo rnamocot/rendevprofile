@@ -153,7 +153,7 @@ export default function ContactPage() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="w-8 h-8 text-green-600" />
                 </div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Thank You!
                 </h1>
                 <p className="text-xl text-gray-600 mb-8">
@@ -189,7 +189,7 @@ export default function ContactPage() {
         <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Let's Work Together
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -199,7 +199,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info Cards */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
               {contactInfo.map((info, index) => (
                 <div key={index} className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-shadow duration-200">
                   <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -226,7 +226,7 @@ export default function ContactPage() {
         {/* Contact Form & Info */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-3 gap-16">
+            <div className="grid lg:grid-cols-3 gap-8 lg:gap-16">
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
@@ -306,7 +306,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="bg-gray-50 rounded-2xl p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
                   
-                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Full Name *
@@ -345,7 +345,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                         Company/Organization
@@ -380,7 +380,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
                     <div>
                       <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
                         Project Type *
@@ -483,8 +483,8 @@ export default function ContactPage() {
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Here are some common questions I receive. Don't see your question? Feel free to ask!
               </p>
             </div>
