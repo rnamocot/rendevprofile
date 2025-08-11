@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { X, Download, Mail, Shield, CheckCircle, AlertCircle } from 'lucide-react';
+import { getFormspreeEndpoint, trackEvent } from '../../lib/config';
 
 export default function ResumeDownloadModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
@@ -72,38 +73,39 @@ export default function ResumeDownloadModal({ isOpen, onClose }) {
     setIsLoading(true);
 
     try {
-      // Submit email to your backend/database
-      const response = await fetch('/api/resume-download', {
+      // Submit to Formspree (same form as newsletter)
+      const response = await fetch(getFormspreeEndpoint(), {
         method: 'POST',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
+          subject: 'Resume Download Request',
+          type: 'resume_download',
+          source: 'resume_modal',
           timestamp: new Date().toISOString(),
           userAgent: navigator.userAgent,
           referrer: document.referrer || 'direct'
         }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to process request');
-      }
-
-      const data = await response.json();
-      
-      if (data.success) {
+      if (response.ok) {
         setSubmitted(true);
+        
+        // Track resume download with GA4
+        trackEvent('resume_download', {
+          event_category: 'engagement',
+          event_label: 'hero_section'
+        });
         
         // Start the download after a short delay
         setTimeout(() => {
-          // Create download link with token for security
-          const downloadUrl = data.downloadUrl || '/resume.pdf';
-          
-          // Create temporary link element
+          // Create download link
           const link = document.createElement('a');
-          link.href = downloadUrl;
+          link.href = '/resume.pdf';
           link.download = 'Renie_Namocot_Resume.pdf';
           link.target = '_blank';
           document.body.appendChild(link);
@@ -116,7 +118,7 @@ export default function ResumeDownloadModal({ isOpen, onClose }) {
           }, 2000);
         }, 1500);
       } else {
-        throw new Error(data.message || 'Failed to process request');
+        throw new Error('Failed to process request');
       }
     } catch (error) {
       console.error('Resume download error:', error);
