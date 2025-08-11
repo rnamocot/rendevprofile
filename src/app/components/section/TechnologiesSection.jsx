@@ -52,7 +52,7 @@ export default function TechnologiesSection() {
         { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg', color: '#2496ED' },
         { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', color: '#F05032' },
         { name: 'Cloudflare', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/cloudflare.svg', color: '#F38020' },
-        { name: 'Make.com', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/integromat.svg', color: '#6366F1' },
+        { name: 'SFTP/FTP', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/filezilla/filezilla-plain.svg', color: '#BF0000' },
         { name: 'Swagger', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg', color: '#85EA2D' }
       ]
     },
@@ -68,7 +68,7 @@ export default function TechnologiesSection() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-sm text-gray-700 mb-6">
@@ -111,7 +111,7 @@ export default function TechnologiesSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12 sm:mt-16">
+        <div className="text-center mt-8 sm:mt-12">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/portfolio"
