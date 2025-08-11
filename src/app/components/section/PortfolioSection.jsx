@@ -30,6 +30,33 @@ export default function PortfolioSection() {
       liveUrl: '#',
       githubUrl: '#',
       featured: true
+    },
+    {
+      title: 'E-commerce Platform',
+      description: 'Modern e-commerce solution with Shopify integration, custom checkout flow, and inventory management.',
+      image: '/images/projects/ecommerce.png',
+      technologies: ['Shopify', 'React', 'Node.js', 'Stripe'],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      title: 'WordPress Blog System',
+      description: 'Custom WordPress theme with Elementor integration, SEO optimization, and content management system.',
+      image: '/images/projects/wordpress.png',
+      technologies: ['WordPress', 'Elementor', 'PHP', 'MySQL'],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: false
+    },
+    {
+      title: 'Real Estate Portal',
+      description: 'Property listing platform with advanced search, user profiles, and integrated payment processing.',
+      image: '/images/projects/realestate.png',
+      technologies: ['Laravel', 'React', 'PostgreSQL', 'Cloudflare'],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: false
     }
   ];
 
@@ -52,8 +79,8 @@ export default function PortfolioSection() {
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {projects.map((project, index) => (
-            <div key={index} className="group">
-              <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3] mb-6">
+            <div key={index} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-200">
+              <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -61,32 +88,46 @@ export default function PortfolioSection() {
                   className="object-cover transition-transform duration-200 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/20 transition-colors duration-200"></div>
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <a
                     href={project.liveUrl}
-                    className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
                     aria-label="View live project"
                   >
-                    <ExternalLink className="w-4 h-4 text-gray-900" />
+                    <ExternalLink className="w-3 h-3 text-gray-900" />
                   </a>
                 </div>
+                {project.featured && (
+                  <div className="absolute top-3 left-3">
+                    <span className="text-xs px-2 py-1 bg-blue-600 text-white rounded-full font-medium">
+                      Featured
+                    </span>
+                  </div>
+                )}
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, techIndex) => (
-                  <span 
-                    key={techIndex}
-                    className="text-sm px-3 py-1 bg-gray-100 text-gray-700 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-1">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-2">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span className="text-xs px-2 py-1 bg-gray-100 text-gray-500 rounded-full">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           ))}

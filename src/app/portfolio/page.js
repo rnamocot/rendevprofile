@@ -217,7 +217,7 @@ export default function PortfolioPage() {
       technologies: ['WordPress', 'Elementor', 'Custom Plugins', 'PHP', 'API Integration'],
       category: 'Service Business',
       year: '2024',
-      liveUrl: '#',
+      liveUrl: 'https://overallperthguttercleaning.com.au/',
       githubUrl: '#',
       featured: false,
       features: [
@@ -237,7 +237,7 @@ export default function PortfolioPage() {
       technologies: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'TypeScript'],
       category: 'SaaS Platform',
       year: '2024',
-      liveUrl: '#',
+      liveUrl: 'https://nxldigital.com/',
       githubUrl: '#',
       featured: false,
       features: [
@@ -366,95 +366,97 @@ export default function PortfolioPage() {
               ))}
             </div>
 
-            {/* Projects */}
-            <div className="space-y-24">
+            {/* Projects Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {filteredProjects.map((project, index) => (
-                <div key={index} className={`grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}>
-                  {/* Project Image */}
-                  <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    <div className="relative group">
-                      <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3]">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/20 transition-colors duration-300"></div>
-                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <a
-                            href={project.liveUrl}
-                            className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
-                            aria-label="View live project"
-                          >
-                            <ExternalLink className="w-5 h-5 text-gray-900" />
-                          </a>
-                        </div>
+                <div key={index} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-200">
+                  <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-200 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/20 transition-colors duration-200"></div>
+                    <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <a
+                        href={project.liveUrl}
+                        className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
+                        aria-label="View live project"
+                      >
+                        <ExternalLink className="w-3 h-3 text-gray-900" />
+                      </a>
+                    </div>
+                    {project.featured && (
+                      <div className="absolute top-3 left-3">
+                        <span className="text-xs px-2 py-1 bg-blue-600 text-white rounded-full font-medium">
+                          Featured
+                        </span>
+                      </div>
+                    )}
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <div className="flex items-center justify-between text-xs text-white">
+                        <span className="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
+                          {project.category}
+                        </span>
+                        <span className="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
+                          {project.year}
+                        </span>
                       </div>
                     </div>
                   </div>
-
-                  {/* Project Details */}
-                  <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="inline-flex items-center gap-2 text-sm text-gray-600">
-                        <Tag className="w-4 h-4" />
-                        {project.category}
-                      </span>
-                      <span className="inline-flex items-center gap-2 text-sm text-gray-600">
-                        <Calendar className="w-4 h-4" />
-                        {project.year}
-                      </span>
-                    </div>
-                    
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                  
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-1">
                       {project.title}
-                    </h2>
-                    
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                      {project.longDescription}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-2">
+                      {project.description}
                     </p>
-
-                    {/* Key Features */}
-                    <div className="mb-8">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h3>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {project.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center gap-2 text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                    
+                    {/* Key Features - Limited */}
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-1 mb-2">
+                        {project.features.slice(0, 2).map((feature, featureIndex) => (
+                          <span key={featureIndex} className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full">
                             {feature}
-                          </li>
+                          </span>
                         ))}
-                      </ul>
+                        {project.features.length > 2 && (
+                          <span className="text-xs px-2 py-1 bg-gray-100 text-gray-500 rounded-full">
+                            +{project.features.length - 2} more
+                          </span>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Technologies */}
-                    <div className="mb-8">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Technologies Used</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, techIndex) => (
+                    {/* Technologies - Limited */}
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
                           <span 
                             key={techIndex}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                            className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full"
                           >
                             {tech}
                           </span>
                         ))}
+                        {project.technologies.length > 3 && (
+                          <span className="text-xs px-2 py-1 bg-gray-100 text-gray-500 rounded-full">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
                       </div>
                     </div>
 
                     {/* Action Button */}
-                    <div>
-                      <a
-                        href={project.liveUrl}
-                        className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        View Live Project
-                      </a>
-                    </div>
+                    <a
+                      href={project.liveUrl}
+                      className="w-full inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors duration-200"
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      View Project
+                    </a>
                   </div>
                 </div>
               ))}
