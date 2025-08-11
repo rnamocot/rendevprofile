@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Code2, Database, Smartphone, Zap, Award, Users, Clock, Target } from 'lucide-react';
+import { Code2, Database, Smartphone, Zap, Award, Users, Clock, Target, CheckCircle } from 'lucide-react';
 import Footer from '../components/layout/Footer';
 
 export const metadata = {
@@ -38,56 +38,98 @@ export default function AboutPage() {
   const achievements = [
     {
       icon: Award,
-      title: '500+ Projects Completed',
-      description: 'Successfully delivered over 500 projects across various industries and technologies.'
+      title: 'Top Rated Upwork Freelancer',
+      description: 'Achieved and maintained Top Rated status on Upwork with consistent 5-star ratings and successful project deliveries.'
     },
     {
       icon: Users,
-      title: '100% Client Satisfaction',
-      description: 'Maintained perfect satisfaction rate with consistent quality and professional service.'
+      title: 'ZendzTools App Owner',
+      description: 'Successfully launched and managing ZendzTools, a modern web application serving users worldwide.'
     },
     {
       icon: Clock,
-      title: '5+ Years Experience',
-      description: 'Deep expertise gained through years of hands-on development and problem-solving.'
+      title: '8+ Years Professional Experience',
+      description: 'Extensive experience from Junior Software Engineer to Senior Developer across multiple companies and industries.'
     },
     {
       icon: Target,
-      title: 'Results-Driven Approach',
-      description: 'Focus on delivering measurable business value and exceptional user experiences.'
+      title: 'International Client Base',
+      description: 'Successfully delivered projects for clients in Australia, Philippines, and globally through remote collaboration.'
     }
   ];
 
-  const timeline = [
+  const workExperience = [
     {
-      year: '2019',
-      title: 'Started Web Development Journey',
-      description: 'Began learning web development with HTML, CSS, and JavaScript'
+      period: 'Jan 2025 - Present',
+      company: 'ZendzTools',
+      role: 'Full-Stack Developer / App Owner',
+      type: 'Self-employed',
+      location: 'Philippines · Remote',
+      description: 'Developing and maintaining web applications using modern technologies including React.js, Next.js, Node.js, and Supabase.',
+      technologies: ['Git', 'React.js', 'SEO', 'Supabase', 'Next.js', 'Node.js', 'Tailwind CSS', 'Vercel', 'Cloudflare']
     },
     {
-      year: '2020',
-      title: 'First Professional Projects',
-      description: 'Started taking on freelance projects and building client relationships'
+      period: 'Feb 2024 - Present',
+      company: 'Upwork',
+      role: 'Full Stack Developer - Top Rated',
+      type: 'Freelance',
+      location: 'Philippines · Remote',
+      description: 'Top Rated freelancer delivering high-quality web applications and solutions. Successfully completed numerous projects with clean, scalable code and timely delivery.',
+      technologies: ['Laravel', 'PHP', 'React.js', 'Next.js', 'WordPress', 'Shopify', 'JavaScript', 'CSS', 'MongoDB', 'Git']
     },
     {
-      year: '2021',
-      title: 'Full-Stack Expertise',
-      description: 'Mastered Laravel, React, and database technologies for complete solutions'
+      period: 'Oct 2023 - Feb 2025',
+      company: 'Sentius Group',
+      role: 'Senior Developer',
+      type: 'Full-time',
+      location: 'Australia · Hybrid',
+      description: 'Managing web development tasks across website updates and maintaining high-quality code standards.',
+      technologies: ['PHP', 'Web Development', 'Website Management']
     },
     {
-      year: '2022',
-      title: 'Scale & Specialization',
-      description: 'Expanded to larger projects and specialized in e-commerce and SaaS platforms'
+      period: 'Oct 2023 - Feb 2025',
+      company: 'Shark Digital Australia',
+      role: 'Senior Web Developer',
+      type: 'Full-time',
+      location: 'Sydney, NSW · Remote',
+      description: 'Leading web development projects and implementing advanced solutions for Australian clients.',
+      technologies: ['Web Development', 'Remote Collaboration']
     },
     {
-      year: '2023',
-      title: 'Advanced Technologies',
-      description: 'Adopted Next.js, TypeScript, and modern DevOps practices'
+      period: 'Nov 2020 - Jun 2023',
+      company: 'EMAPTA',
+      role: 'PHP Developer',
+      type: 'Full-time',
+      location: 'Philippines',
+      description: 'Developed robust PHP applications and maintained existing systems for international clients.',
+      technologies: ['PHP', 'Backend Development', 'Database Management']
     },
     {
-      year: '2024',
-      title: 'Present Day',
-      description: 'Continuing to innovate and deliver cutting-edge web solutions globally'
+      period: 'Oct 2019 - Nov 2021',
+      company: 'Gazillionaires Trading',
+      role: 'Full-stack Developer',
+      type: 'Full-time',
+      location: 'Philippines',
+      description: 'Built complete web applications from frontend to backend, handling both user interface and server-side logic.',
+      technologies: ['Full-stack Development', 'Web Applications']
+    },
+    {
+      period: 'Jun 2019 - Oct 2019',
+      company: 'SOCIOKING, Inc',
+      role: 'Web Developer',
+      type: 'Full-time',
+      location: 'Philippines',
+      description: 'Developed web solutions and maintained company websites with focus on user experience.',
+      technologies: ['Web Development', 'UI/UX']
+    },
+    {
+      period: 'May 2017 - May 2019',
+      company: 'Business Switch',
+      role: 'Junior Software Engineer',
+      type: 'Full-time',
+      location: 'Philippines',
+      description: 'Started my professional journey in software development, learning industry best practices and contributing to various projects.',
+      technologies: ['Software Engineering', 'Programming Fundamentals']
     }
   ];
 
@@ -103,17 +145,18 @@ export default function AboutPage() {
                   About Me
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                  I'm a passionate full-stack developer dedicated to creating exceptional 
-                  digital experiences that drive business growth and user satisfaction.
+                  I'm a passionate full-stack developer with over 8 years of professional experience, 
+                  specializing in modern web technologies and delivering exceptional digital solutions 
+                  for clients worldwide. Currently running ZendzTools and maintaining Top Rated status on Upwork.
                 </p>
                 <div className="grid grid-cols-2 gap-4 sm:gap-6">
                   <div className="text-center sm:text-left">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">500+</div>
-                    <div className="text-sm sm:text-base text-gray-600">Projects Completed</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">8+</div>
+                    <div className="text-sm sm:text-base text-gray-600">Years Experience</div>
                   </div>
                   <div className="text-center sm:text-left">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">5+</div>
-                    <div className="text-sm sm:text-base text-gray-600">Years Experience</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Top Rated</div>
+                    <div className="text-sm sm:text-base text-gray-600">Upwork Freelancer</div>
                   </div>
                 </div>
               </div>
@@ -135,8 +178,99 @@ export default function AboutPage() {
         </section>
 
 
-        {/* Skills Section */}
+        {/* Professional Journey Overview */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">My Professional Journey</h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-12">
+                From Junior Software Engineer to running my own company, my journey in web development 
+                has been driven by a passion for creating innovative solutions and delivering exceptional results 
+                for clients around the world.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">1</span>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Started as Junior Engineer</h3>
+                  <p className="text-gray-600">Began at Business Switch in 2017, learning the fundamentals and industry best practices.</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">2</span>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Grew to Senior Roles</h3>
+                  <p className="text-gray-600">Advanced through various companies, eventually reaching Senior Developer positions in Australia.</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">3</span>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Entrepreneur & Top Freelancer</h3>
+                  <p className="text-gray-600">Launched ZendzTools and achieved Top Rated status on Upwork, serving global clients.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Professional Experience */}
         <section className="py-24 bg-white">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Over 8 years of professional web development experience across various companies 
+                and industries, from junior developer to senior positions.
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              <div className="space-y-8">
+                {workExperience.map((job, index) => (
+                  <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-200">
+                    <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+                      <div className="lg:w-1/3">
+                        <div className="text-sm font-medium text-blue-600 mb-2">{job.period}</div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-1">{job.role}</h3>
+                        <div className="text-lg font-medium text-gray-700 mb-1">{job.company}</div>
+                        <div className="text-sm text-gray-500 mb-2">{job.type} • {job.location}</div>
+                      </div>
+                      <div className="lg:w-2/3">
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                          {job.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {job.technologies.map((tech, techIndex) => (
+                            <span 
+                              key={techIndex}
+                              className="text-xs px-3 py-1 bg-white text-gray-700 rounded-full border border-gray-200 font-medium"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Core Expertise Section */}
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Core Expertise</h2>
@@ -149,7 +283,7 @@ export default function AboutPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {skills.map((skill, index) => (
                 <div key={index} className="group">
-                  <div className="bg-gray-50 rounded-2xl p-8 h-full hover:bg-gray-100 transition-colors duration-200">
+                  <div className="bg-white rounded-2xl p-8 h-full hover:shadow-lg transition-all duration-200 border border-gray-100">
                     <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200">
                       <skill.icon className="w-6 h-6 text-white" />
                     </div>
@@ -163,7 +297,7 @@ export default function AboutPage() {
                       {skill.technologies.map((tech, techIndex) => (
                         <span 
                           key={techIndex}
-                          className="text-xs px-2 py-1 bg-white text-gray-700 rounded-full border border-gray-200"
+                          className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full border border-gray-200"
                         >
                           {tech}
                         </span>
@@ -176,11 +310,92 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Achievements Section */}
+        {/* My Approach & Values */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">My Development Approach</h2>
+                <p className="text-xl text-gray-600">
+                  Quality, collaboration, and continuous learning drive everything I do
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">What Sets Me Apart</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Quality-First Mindset</h4>
+                        <p className="text-gray-600">I believe in writing clean, maintainable code that stands the test of time. Every line is crafted with future scalability in mind.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Collaborative Partnership</h4>
+                        <p className="text-gray-600">I work closely with clients to understand their vision and translate it into exceptional digital experiences that exceed expectations.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Continuous Innovation</h4>
+                        <p className="text-gray-600">Technology evolves rapidly, and so do I. I'm always exploring new tools and techniques to deliver cutting-edge solutions.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Me?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                      <span className="text-gray-700">8+ years of proven experience</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                      <span className="text-gray-700">Top Rated Upwork freelancer</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                      <span className="text-gray-700">Full-stack expertise across modern technologies</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                      <span className="text-gray-700">Strong track record with international clients</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                      <span className="text-gray-700">Entrepreneur mindset with business understanding</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                      <span className="text-gray-700">Reliable communication and timely delivery</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Achievements */}
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Achievements</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Key Achievements</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Milestones that reflect my commitment to excellence and continuous growth 
                 in the field of web development.
@@ -201,41 +416,6 @@ export default function AboutPage() {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Journey Timeline */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">My Journey</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                The evolution of my career and the key milestones that shaped 
-                my expertise in web development.
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
-                {timeline.map((item, index) => (
-                  <div key={index} className="flex gap-8 items-start">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold">
-                        {item.year}
-                      </div>
-                    </div>
-                    <div className="flex-1 pb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>

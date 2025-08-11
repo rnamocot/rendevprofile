@@ -38,7 +38,10 @@ export default function HeroSection() {
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-600 max-w-lg leading-relaxed">
-               I’m a full-stack developer specializing in React, Next.js, and Laravel. With a focus on CMS automation (WordPress, Shopify), I develop custom themes, plugins, and web applications that prioritize speed, scalability, and seamless user experiences. My passion lies in transforming ideas into modern, efficient, and user-friendly digital solutions.
+         Full-stack developer with 8+ years of experience building modern web applications using     
+  React, Next.js, and Laravel. I specialize in CMS and e-commerce solutions, creating custom   
+  WordPress themes, headless WordPress with React integrations, responsive website design,     
+  Shopify customizations, and enterprise-scale web applications.
               </p>
             </div>
 
