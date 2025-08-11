@@ -1,9 +1,14 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight, Download } from 'lucide-react';
+import ResumeDownloadModal from '../modals/ResumeDownloadModal';
 
 export default function HeroSection() {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
   return (
+    <>
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Geometric Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -46,13 +51,13 @@ export default function HeroSection() {
                 Start Project
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
-                href="/resume.pdf"
+              <button
+                onClick={() => setIsResumeModalOpen(true)}
                 className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-medium hover:border-gray-900 hover:text-gray-900 transition-all duration-200"
               >
                 <Download className="w-4 h-4" />
                 Resume
-              </a>
+              </button>
             </div>
 
             {/* Stats */}
@@ -103,5 +108,12 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
+
+    {/* Resume Download Modal */}
+    <ResumeDownloadModal 
+      isOpen={isResumeModalOpen}
+      onClose={() => setIsResumeModalOpen(false)}
+    />
+    </>
   );
 }
