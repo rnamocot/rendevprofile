@@ -65,6 +65,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics GA4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV2PTNE81C"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XV2PTNE81C');
+            `,
+          }}
+        />
+        
         {/* Explicit meta tags for social sharing */}
         <meta property="og:image" content="https://www.renienamocot.com/social-share.PNG" />
         <meta property="og:image:width" content="1200" />

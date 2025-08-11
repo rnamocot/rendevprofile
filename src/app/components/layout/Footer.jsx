@@ -25,6 +25,9 @@ export default function Footer() {
     }
   ];
 
+
+
+
   const quickLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
@@ -103,6 +106,7 @@ export default function Footer() {
             </a>
             <a href="/terms" className="hover:text-white transition-colors duration-200">
               Terms of Service
+
             </a>
           </div>
         </div>
@@ -110,3 +114,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+
