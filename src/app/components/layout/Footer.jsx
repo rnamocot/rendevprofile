@@ -8,7 +8,7 @@ export default function Footer() {
     {
       name: 'GitHub',
       icon: Github,
-      href: 'https://github.com/renie',
+      href: 'https://github.com/rnamocot',
       color: 'hover:text-gray-900'
     },
     {

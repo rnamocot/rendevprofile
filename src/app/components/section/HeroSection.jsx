@@ -53,7 +53,7 @@ export default function HeroSection() {
               </a>
               <button
                 onClick={() => setIsResumeModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-medium hover:border-gray-900 hover:text-gray-900 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-medium hover:border-gray-900 hover:text-gray-900 transition-all duration-200 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 Resume
