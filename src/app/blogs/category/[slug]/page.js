@@ -170,7 +170,7 @@ export default async function CategoryPage({ params }) {
                 {posts.map((post, index) => (
                   <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
                     <Link href={`/blogs/${post.slug}`}>
-                      <div className="aspect-video bg-gray-200 relative overflow-hidden">
+                      <div className="h-64 bg-gray-200 relative overflow-hidden">
                         <Image
                           src={post.image || '/blog_placeholder.jpg'}
                           alt={post.title}

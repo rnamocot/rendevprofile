@@ -177,7 +177,7 @@ export default async function BlogPostPage({ params }) {
 
             {/* Featured Image */}
             <div className="mb-12">
-              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <div className="h-80 bg-gray-200 rounded-lg overflow-hidden">
                 <Image
                   src={post.image || '/blog_placeholder.jpg'}
                   alt={post.title}
@@ -267,7 +267,7 @@ export default async function BlogPostPage({ params }) {
                 {relatedPosts.map((relatedPost) => (
                   <article key={relatedPost.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
                     <Link href={`/blogs/${relatedPost.slug}`}>
-                      <div className="aspect-video bg-gray-200 relative overflow-hidden">
+                      <div className="h-48 bg-gray-200 relative overflow-hidden">
                         <Image
                           src={relatedPost.image || '/blog_placeholder.jpg'}
                           alt={relatedPost.title}
