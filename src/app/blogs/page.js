@@ -1,3 +1,6 @@
+'use client';
+import { useState, useMemo } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts, blogCategories } from '../lib/BlogdataList';
@@ -5,39 +8,33 @@ import NewsletterSignup from './components/NewsletterSignup';
 import AdSense from './components/AdSense';
 import Footer from '../components/layout/Footer';
 
-export const metadata = {
-  title: 'Blog - Web Development Insights | Renie Namocot',
-  description: 'Explore web development tutorials, tips, and insights about Next.js, React, WordPress, Laravel, and modern JavaScript. Learn from practical examples and best practices.',
-  keywords: 'web development blog, Next.js tutorials, React tips, WordPress development, Laravel guides, JavaScript ES2024, programming blog, developer insights',
-  openGraph: {
-    title: 'Blog - Web Development Insights | Renie Namocot',
-    description: 'Explore web development tutorials, tips, and insights about Next.js, React, WordPress, Laravel, and modern JavaScript.',
-    url: 'https://renienamocot.com/blogs',
-    type: 'website',
-    images: [
-      {
-        url: 'https://renienamocot.com/social-share.PNG',
-        width: 1200,
-        height: 630,
-        alt: 'Renie Namocot Blog - Web Development Insights'
-      }
-    ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Blog - Web Development Insights | Renie Namocot',
-    description: 'Explore web development tutorials, tips, and insights about Next.js, React, WordPress, Laravel, and modern JavaScript.',
-    images: ['https://renienamocot.com/social-share.PNG']
-  },
-  alternates: {
-    canonical: '/blogs'
-  }
-};
+// Metadata will be handled by Next.js head or layout
 
 export default function BlogPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 9;
+  
   const blogPosts = getBlogPosts();
   const featuredPosts = getBlogPosts(3, null, true);
-  const allPosts = getBlogPosts(); // Get all posts for the main section
+  
+  // Pagination logic
+  const totalPosts = blogPosts.length;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+  
+  const paginatedPosts = useMemo(() => {
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+    return blogPosts.slice(startIndex, endIndex);
+  }, [blogPosts, currentPage, postsPerPage]);
+  
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // Scroll to articles section
+    document.getElementById('all-articles')?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -68,6 +65,22 @@ export default function BlogPage() {
 
   return (
     <>
+      <Head>
+        <title>Blog - Web Development Insights | Renie Namocot</title>
+        <meta name="description" content="Explore web development tutorials, tips, and insights about Next.js, React, WordPress, Laravel, and modern JavaScript. Learn from practical examples and best practices." />
+        <meta name="keywords" content="web development blog, Next.js tutorials, React tips, WordPress development, Laravel guides, JavaScript ES2024, programming blog, developer insights" />
+        <meta property="og:title" content="Blog - Web Development Insights | Renie Namocot" />
+        <meta property="og:description" content="Explore web development tutorials, tips, and insights about Next.js, React, WordPress, Laravel, and modern JavaScript." />
+        <meta property="og:url" content="https://renienamocot.com/blogs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://renienamocot.com/social-share.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog - Web Development Insights | Renie Namocot" />
+        <meta name="twitter:description" content="Explore web development tutorials, tips, and insights about Next.js, React, WordPress, Laravel, and modern JavaScript." />
+        <meta name="twitter:image" content="https://renienamocot.com/social-share.PNG" />
+        <link rel="canonical" href="https://renienamocot.com/blogs" />
+      </Head>
+      
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -177,11 +190,16 @@ export default function BlogPage() {
         )}
 
         {/* All Posts */}
-        <section className="py-12 bg-gray-50">
+        <section id="all-articles" className="py-12 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">All Articles</h2>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">All Articles</h2>
+              <p className="text-gray-600">
+                Showing {((currentPage - 1) * postsPerPage) + 1} - {Math.min(currentPage * postsPerPage, totalPosts)} of {totalPosts} articles
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allPosts.map((post) => (
+              {paginatedPosts.map((post) => (
                 <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group">
                   <Link href={`/blogs/${post.slug}`}>
                     <div className="h-64 bg-gray-200 relative overflow-hidden">
@@ -241,6 +259,96 @@ export default function BlogPage() {
                   </div>
                 </article>
               ))}
+            </div>
+            
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center items-center mt-12 space-x-2">
+                {/* Previous Button */}
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                    currentPage === 1
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  Previous
+                </button>
+
+                {/* Page Numbers */}
+                <div className="flex space-x-1">
+                  {/* First page */}
+                  {currentPage > 3 && (
+                    <>
+                      <button
+                        onClick={() => handlePageChange(1)}
+                        className="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300"
+                      >
+                        1
+                      </button>
+                      {currentPage > 4 && (
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">...</span>
+                      )}
+                    </>
+                  )}
+
+                  {/* Current page range */}
+                  {Array.from({ length: totalPages }, (_, index) => {
+                    const page = index + 1;
+                    if (page >= currentPage - 2 && page <= currentPage + 2) {
+                      return (
+                        <button
+                          key={page}
+                          onClick={() => handlePageChange(page)}
+                          className={`w-10 h-10 rounded-lg font-medium transition-all duration-200 ${
+                            page === currentPage
+                              ? 'bg-blue-600 text-white shadow-md'
+                              : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      );
+                    }
+                    return null;
+                  })}
+
+                  {/* Last page */}
+                  {currentPage < totalPages - 2 && (
+                    <>
+                      {currentPage < totalPages - 3 && (
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">...</span>
+                      )}
+                      <button
+                        onClick={() => handlePageChange(totalPages)}
+                        className="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300"
+                      >
+                        {totalPages}
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                {/* Next Button */}
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                    currentPage === totalPages
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  Next
+                </button>
+              </div>
+            )}
+
+            {/* Page info */}
+            <div className="text-center mt-6 text-sm text-gray-500">
+              Page {currentPage} of {totalPages}
             </div>
           </div>
         </section>

@@ -22,6 +22,9 @@ import ReactPerformanceMastery, { blogPost as reactPerformanceMasteryData } from
 import WordPressCustomPlugin, { blogPost as wordPressCustomPluginData } from './categories/wordpress/WordPressCustomPlugin.jsx';
 import WordPressDevelopmentMastery, { blogPost as wordPressDevelopmentMasteryData } from './categories/wordpress/WordPressDevelopmentMastery.jsx';
 
+// Web Development Components
+import SecureFormsWithoutCaptcha, { blogPost as secureFormsWithoutCaptchaData } from './categories/web-development/SecureFormsWithoutCaptcha.jsx';
+
 // Export components
 export const blogComponents = {
   1: NextJS15Revolutionary,
@@ -33,7 +36,8 @@ export const blogComponents = {
   7: AIPoweredDevelopmentTools,
   8: DeveloperProductivityRevolution,
   9: MachineLearningTensorFlowJS,
-  10: WordPressDevelopmentMastery
+  10: WordPressDevelopmentMastery,
+  11: SecureFormsWithoutCaptcha
 };
 
 // Export blog data
@@ -47,7 +51,8 @@ export const individualBlogPosts = [
   aiPoweredDevelopmentToolsData,
   developerProductivityRevolutionData,
   machineLearningTensorFlowJSData,
-  wordPressDevelopmentMasteryData
+  wordPressDevelopmentMasteryData,
+  secureFormsWithoutCaptchaData
 ];
 
 // Export by category
@@ -58,7 +63,8 @@ export const blogsByCategory = {
   'laravel': [laravelAPIAuthenticationData],
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData],
-  'productivity': [developerProductivityRevolutionData]
+  'productivity': [developerProductivityRevolutionData],
+  'web-development': [secureFormsWithoutCaptchaData]
 };
 
 // Get component by slug
