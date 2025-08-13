@@ -5,56 +5,56 @@ import { ExternalLink } from 'lucide-react';
 export default function PortfolioSection() {
   const projects = [
     {
-      title: 'EAS - Estate Agency System',
-      description: 'Comprehensive estate agency management platform with property listings, client management, and transaction tracking.',
-      image: '/images/projects/eas.png',
-      technologies: ['Laravel', 'Vue.js', 'MySQL', 'PHP'],
-      liveUrl: '#',
+      title: 'Kavalri - Jewelry Shop',
+      description: 'Premium Shopify jewelry store with custom theme and seamless checkout experience.',
+      image: '/images/projects/kavalri.png',
+      technologies: ['Shopify', 'Liquid', 'JavaScript', 'CSS'],
+      liveUrl: 'https://kavalri.com.au/',
       githubUrl: '#',
       featured: true
     },
     {
-      title: 'NXL Digital - Digital Marketing Platform',
-      description: 'Full-featured digital marketing platform with campaign management, analytics, and client reporting.',
+      title: 'Viva Wellness - Drip Therapy',
+      description: 'WooCommerce-based wellness platform with Square Payments integration for IV therapy services.',
+      image: '/images/projects/viva-wellness.png',
+      technologies: ['WordPress', 'WooCommerce', 'Elementor', 'Square API'],
+      liveUrl: 'https://vivawellnessdrip.com/',
+      githubUrl: '#',
+      featured: true
+    },
+    {
+      title: 'Choctaw Dental - Dental Practice',
+      description: 'Custom dental practice website with appointment booking and patient management features.',
+      image: '/images/projects/choctowdental.png',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'API Integration'],
+      liveUrl: 'https://choctawdental.com/',
+      githubUrl: '#',
+      featured: true
+    },
+    {
+      title: 'NXL Digital - Marketing Platform',
+      description: 'Digital marketing platform with campaign management and analytics dashboard.',
       image: '/images/projects/nxldigital.png',
       technologies: ['Next.js', 'React', 'Node.js', 'PostgreSQL'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
-    },
-    {
-      title: 'Zendz Tools - Development Toolkit',
-      description: 'Comprehensive development toolkit with code generators, API testing, and project management features.',
-      image: '/images/projects/zendztools.png',
-      technologies: ['Laravel', 'React', 'TypeScript', 'MySQL'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
-    },
-    {
-      title: 'E-commerce Platform',
-      description: 'Modern e-commerce solution with Shopify integration, custom checkout flow, and inventory management.',
-      image: '/images/projects/ecommerce.png',
-      technologies: ['Shopify', 'React', 'Node.js', 'Stripe'],
-      liveUrl: '#',
+      liveUrl: 'https://nxldigital.com/',
       githubUrl: '#',
       featured: false
     },
     {
-      title: 'WordPress Blog System',
-      description: 'Custom WordPress theme with Elementor integration, SEO optimization, and content management system.',
-      image: '/images/projects/wordpress.png',
-      technologies: ['WordPress', 'Elementor', 'PHP', 'MySQL'],
-      liveUrl: '#',
+      title: 'NAFDA - Foodservice Distributor',
+      description: 'WooCommerce platform for foodservice distribution with custom fields and webhook integrations.',
+      image: '/images/projects/nafda.png',
+      technologies: ['WordPress', 'WooCommerce', 'Elementor', 'ACF'],
+      liveUrl: 'https://nafda.com.au/',
       githubUrl: '#',
       featured: false
     },
     {
-      title: 'Real Estate Portal',
-      description: 'Property listing platform with advanced search, user profiles, and integrated payment processing.',
-      image: '/images/projects/realestate.png',
-      technologies: ['Laravel', 'React', 'PostgreSQL', 'Cloudflare'],
-      liveUrl: '#',
+      title: 'Cloud Blvd - E-commerce Platform',
+      description: 'Shopify store with custom Liquid theme and advanced checkout functionality.',
+      image: '/images/projects/cloulblvd.png',
+      technologies: ['Shopify', 'Liquid', 'JavaScript', 'API Integration'],
+      liveUrl: 'https://cloudblvd.com.au/',
       githubUrl: '#',
       featured: false
     }

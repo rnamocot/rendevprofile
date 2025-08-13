@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getBlogPost, getRelatedPosts, getBlogCategory } from '../../lib/BlogdataList';
+import { getBlogPost, getRelatedPosts, getBlogCategory, getBlogComponentBySlug } from '../../lib/BlogdataList';
 import SocialShare from '../components/SocialShare';
 import AdSense from '../components/AdSense';
 import Footer from '../../components/layout/Footer';
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }) {
     },
     articleSection: category?.name || post.category,
     keywords: post.tags.join(', '),
-    wordCount: post.content.replace(/<[^>]*>/g, '').split(' ').length,
+    wordCount: post.content ? post.content.replace(/<[^>]*>/g, '').split(' ').length : parseInt(post.readTime) * 200,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://renienamocot.com/blogs/${post.slug}`
@@ -190,8 +190,15 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none mb-12">
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div className="mb-12">
+              {(() => {
+                const BlogComponent = getBlogComponentBySlug(post.slug);
+                return BlogComponent ? <BlogComponent /> : (
+                  <div className="prose prose-lg max-w-none">
+                    <p className="text-gray-600">Content not available.</p>
+                  </div>
+                );
+              })()}
             </div>
 
             {/* AdSense Ad - Mid Article */}

@@ -37,7 +37,7 @@ export const metadata = {
 export default function BlogPage() {
   const blogPosts = getBlogPosts();
   const featuredPosts = getBlogPosts(3, null, true);
-  const recentPosts = getBlogPosts(6);
+  const allPosts = getBlogPosts(); // Get all posts for the main section
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -121,39 +121,45 @@ export default function BlogPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {featuredPosts.map((post) => (
-                  <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                  <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group">
                     <Link href={`/blogs/${post.slug}`}>
                       <div className="h-64 bg-gray-200 relative overflow-hidden">
                         <Image
                           src={post.image || '/blog_placeholder.jpg'}
                           alt={post.title}
                           fill
-                          className="object-cover hover:scale-105 transition-transform duration-300"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        
+                        {/* Featured badge */}
                         <div className="absolute top-4 left-4">
-                          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
                             Featured
                           </span>
+                        </div>
+                        
+                        {/* Title overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <h3 className="text-xl font-bold text-white mb-2 line-clamp-2 group-hover:text-blue-200 transition-colors">
+                            {post.title}
+                          </h3>
+                          <div className="flex items-center text-sm text-gray-200 gap-2">
+                            <time dateTime={post.publishDate}>
+                              {new Date(post.publishDate).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric'
+                              })}
+                            </time>
+                            <span>•</span>
+                            <span>{post.readTime}</span>
+                          </div>
                         </div>
                       </div>
                     </Link>
                     <div className="p-6">
-                      <div className="flex items-center text-sm text-gray-500 mb-3">
-                        <time dateTime={post.publishDate}>
-                          {new Date(post.publishDate).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </time>
-                        <span className="mx-2">•</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      <Link href={`/blogs/${post.slug}`}>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2">
-                          {post.title}
-                        </h3>
-                      </Link>
                       <p className="text-gray-600 line-clamp-3 mb-4">{post.excerpt}</p>
                       <div className="flex flex-wrap gap-2">
                         {post.tags.slice(0, 3).map((tag) => (
@@ -170,40 +176,52 @@ export default function BlogPage() {
           </section>
         )}
 
-        {/* Recent Posts */}
+        {/* All Posts */}
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Recent Articles</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">All Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {recentPosts.map((post) => (
-                <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+              {allPosts.map((post) => (
+                <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group">
                   <Link href={`/blogs/${post.slug}`}>
                     <div className="h-64 bg-gray-200 relative overflow-hidden">
                       <Image
                         src={post.image || '/blog_placeholder.jpg'}
                         alt={post.title}
                         fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                      
+                      {/* Title overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-blue-200 transition-colors">
+                          {post.title}
+                        </h3>
+                        <div className="flex items-center text-sm text-gray-200 gap-2">
+                          <time dateTime={post.publishDate}>
+                            {new Date(post.publishDate).toLocaleDateString('en-US', {
+                              month: 'short',
+                              day: 'numeric',
+                              year: 'numeric'
+                            })}
+                          </time>
+                          <span>•</span>
+                          <span>{post.readTime}</span>
+                          {post.featured && (
+                            <>
+                              <span>•</span>
+                              <span className="bg-blue-600 text-white px-2 py-0.5 rounded-full text-xs font-medium">
+                                Featured
+                              </span>
+                            </>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </Link>
                   <div className="p-6">
-                    <div className="flex items-center text-sm text-gray-500 mb-3">
-                      <time dateTime={post.publishDate}>
-                        {new Date(post.publishDate).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
-                      </time>
-                      <span className="mx-2">•</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <Link href={`/blogs/${post.slug}`}>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                    </Link>
                     <p className="text-gray-600 line-clamp-3 mb-4">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex flex-wrap gap-2">
