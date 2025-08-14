@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block access to admin and API routes
+Disallow: /admin/
+Disallow: /api/
+
+# Allow access to all other content
+Allow: /blogs/
+Allow: /portfolio/
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+
+# Sitemap location
+Sitemap: https://renienamocot.com/sitemap.xml
+
+# Crawl delay (optional, removes aggressive crawling)
+Crawl-delay: 1
