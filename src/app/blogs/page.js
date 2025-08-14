@@ -271,7 +271,7 @@ export default function BlogPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     currentPage === 1
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 cursor-pointer'
                   }`}
                 >
                   Previous
@@ -284,7 +284,7 @@ export default function BlogPage() {
                     <>
                       <button
                         onClick={() => handlePageChange(1)}
-                        className="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300"
+                        className="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 cursor-pointer"
                       >
                         1
                       </button>
@@ -304,8 +304,8 @@ export default function BlogPage() {
                           onClick={() => handlePageChange(page)}
                           className={`w-10 h-10 rounded-lg font-medium transition-all duration-200 ${
                             page === currentPage
-                              ? 'bg-blue-600 text-white shadow-md'
-                              : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
+                              ? 'bg-blue-600 text-white shadow-md cursor-pointer'
+                              : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 cursor-pointer'
                           }`}
                         >
                           {page}
@@ -323,7 +323,7 @@ export default function BlogPage() {
                       )}
                       <button
                         onClick={() => handlePageChange(totalPages)}
-                        className="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300"
+                        className="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 cursor-pointer"
                       >
                         {totalPages}
                       </button>
@@ -338,7 +338,7 @@ export default function BlogPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     currentPage === totalPages
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 cursor-pointer'
                   }`}
                 >
                   Next

@@ -39,7 +39,7 @@ export default function AIPoweredDevelopmentTools() {
     "dateModified": blogPost.lastModified,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://yoursite.com/blogs/${blogPost.slug}`
+      "@id": `https://renienamocot.com/blogs/${blogPost.slug}`
     }
   };
 
@@ -60,7 +60,7 @@ export default function AIPoweredDevelopmentTools() {
         <meta name="twitter:title" content={blogPost.title} />
         <meta name="twitter:description" content={blogPost.excerpt} />
         <meta name="twitter:image" content={blogPost.featuredImageUrl} />
-        <link rel="canonical" href={`https://yoursite.com/blogs/${blogPost.slug}`} />
+        <link rel="canonical" href={`https://renienamocot.com/blogs/${blogPost.slug}`} />
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -223,7 +223,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
           </ul>
           
           <h3>Conclusion</h3>
-          <p>AI development tools are no longer optional—they're essential for staying competitive in 2025. The key is choosing the right tool for your workflow and using AI to augment, not replace, your development skills.</p>
+          <p>AI development tools are no longer optional - they're essential for staying competitive in 2025. The key is choosing the right tool for your workflow and using AI to augment, not replace, your development skills.</p>
         </div>
       </article>
     </>

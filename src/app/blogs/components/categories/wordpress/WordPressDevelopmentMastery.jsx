@@ -39,7 +39,7 @@ export default function WordPressDevelopmentMastery() {
     "dateModified": blogPost.lastModified,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://yoursite.com/blogs/${blogPost.slug}`
+      "@id": `https://renienamocot.com/blogs/${blogPost.slug}`
     }
   };
 
@@ -60,7 +60,7 @@ export default function WordPressDevelopmentMastery() {
         <meta name="twitter:title" content={blogPost.title} />
         <meta name="twitter:description" content={blogPost.excerpt} />
         <meta name="twitter:image" content={blogPost.featuredImageUrl} />
-        <link rel="canonical" href={`https://yoursite.com/blogs/${blogPost.slug}`} />
+        <link rel="canonical" href={`https://renienamocot.com/blogs/${blogPost.slug}`} />
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

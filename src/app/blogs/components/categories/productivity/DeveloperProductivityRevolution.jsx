@@ -39,7 +39,7 @@ export default function DeveloperProductivityRevolution() {
     "dateModified": blogPost.lastModified,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://yoursite.com/blogs/${blogPost.slug}`
+      "@id": `https://renienamocot.com/blogs/${blogPost.slug}`
     }
   };
 
@@ -60,7 +60,7 @@ export default function DeveloperProductivityRevolution() {
         <meta name="twitter:title" content={blogPost.title} />
         <meta name="twitter:description" content={blogPost.excerpt} />
         <meta name="twitter:image" content={blogPost.featuredImageUrl} />
-        <link rel="canonical" href={`https://yoursite.com/blogs/${blogPost.slug}`} />
+        <link rel="canonical" href={`https://renienamocot.com/blogs/${blogPost.slug}`} />
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -101,7 +101,7 @@ export default function DeveloperProductivityRevolution() {
 
         <div className="prose prose-lg max-w-none">
           <h2>The Productivity Imperative</h2>
-          <p>In 2025, developer productivity is not just about writing code faster—it's about working smarter with AI-powered tools, automation, and optimized workflows. This guide covers the essential tools and techniques that separate high-productivity developers from the rest.</p>
+          <p>In 2025, developer productivity is not just about writing code faster - it's about working smarter with AI-powered tools, automation, and optimized workflows. This guide covers the essential tools and techniques that separate high-productivity developers from the rest.</p>
           
           <h3>AI-Powered Development Environment</h3>
           <h4>VS Code with AI Extensions</h4>

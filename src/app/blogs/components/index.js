@@ -2,6 +2,7 @@
 import BuildingAIPoweredWebApps, { blogPost as buildingAIPoweredWebAppsData } from './categories/ai-development/BuildingAIPoweredWebApps.jsx';
 import AIPoweredDevelopmentTools, { blogPost as aiPoweredDevelopmentToolsData } from './categories/ai-development/AIPoweredDevelopmentTools.jsx';
 import MachineLearningTensorFlowJS, { blogPost as machineLearningTensorFlowJSData } from './categories/ai-development/MachineLearningTensorFlowJS.jsx';
+import AIJobSecurityITStudents, { blogPost as aiJobSecurityITStudentsData } from './categories/ai-development/AIJobSecurityITStudents.jsx';
 
 // JavaScript Components
 import ModernJavaScriptES2024, { blogPost as modernJavaScriptES2024Data } from './categories/javascript/ModernJavaScriptES2024.jsx';
@@ -24,6 +25,7 @@ import WordPressDevelopmentMastery, { blogPost as wordPressDevelopmentMasteryDat
 
 // Web Development Components
 import SecureFormsWithoutCaptcha, { blogPost as secureFormsWithoutCaptchaData } from './categories/web-development/SecureFormsWithoutCaptcha.jsx';
+import TechnicalSEOWebDevelopment, { blogPost as technicalSEOWebDevelopmentData } from './categories/web-development/TechnicalSEOWebDevelopment.jsx';
 
 // Export components
 export const blogComponents = {
@@ -37,7 +39,9 @@ export const blogComponents = {
   8: DeveloperProductivityRevolution,
   9: MachineLearningTensorFlowJS,
   10: WordPressDevelopmentMastery,
-  11: SecureFormsWithoutCaptcha
+  11: SecureFormsWithoutCaptcha,
+  12: TechnicalSEOWebDevelopment,
+  13: AIJobSecurityITStudents
 };
 
 // Export blog data
@@ -52,7 +56,9 @@ export const individualBlogPosts = [
   developerProductivityRevolutionData,
   machineLearningTensorFlowJSData,
   wordPressDevelopmentMasteryData,
-  secureFormsWithoutCaptchaData
+  secureFormsWithoutCaptchaData,
+  technicalSEOWebDevelopmentData,
+  aiJobSecurityITStudentsData
 ];
 
 // Export by category
@@ -62,9 +68,9 @@ export const blogsByCategory = {
   'wordpress': [wordPressCustomPluginData, wordPressDevelopmentMasteryData],
   'laravel': [laravelAPIAuthenticationData],
   'javascript': [modernJavaScriptES2024Data],
-  'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData],
+  'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
   'productivity': [developerProductivityRevolutionData],
-  'web-development': [secureFormsWithoutCaptchaData]
+  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData]
 };
 
 // Get component by slug
