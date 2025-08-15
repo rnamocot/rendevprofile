@@ -15,6 +15,7 @@ import NextJS15Revolutionary, { blogPost as nextJS15RevolutionaryData } from './
 
 // Productivity Components
 import DeveloperProductivityRevolution, { blogPost as developerProductivityRevolutionData } from './categories/productivity/DeveloperProductivityRevolution.jsx';
+import AutomationDeveloperWorkflows, { blogPost as automationDeveloperWorkflowsData } from './categories/productivity/AutomationDeveloperWorkflows.jsx';
 
 // React Components
 import ReactPerformanceMastery, { blogPost as reactPerformanceMasteryData } from './categories/react/ReactPerformanceMastery.jsx';
@@ -22,10 +23,12 @@ import ReactPerformanceMastery, { blogPost as reactPerformanceMasteryData } from
 // WordPress Components
 import WordPressCustomPlugin, { blogPost as wordPressCustomPluginData } from './categories/wordpress/WordPressCustomPlugin.jsx';
 import WordPressDevelopmentMastery, { blogPost as wordPressDevelopmentMasteryData } from './categories/wordpress/WordPressDevelopmentMastery.jsx';
+import WordPressSEODominance, { blogPost as wordPressSEODominanceData } from './categories/wordpress/WordPressSEODominance.jsx';
 
 // Web Development Components
 import SecureFormsWithoutCaptcha, { blogPost as secureFormsWithoutCaptchaData } from './categories/web-development/SecureFormsWithoutCaptcha.jsx';
 import TechnicalSEOWebDevelopment, { blogPost as technicalSEOWebDevelopmentData } from './categories/web-development/TechnicalSEOWebDevelopment.jsx';
+import ChoosingHostingerWebHosting, { blogPost as choosingHostingerWebHostingData } from './categories/web-development/ChoosingHostingerWebHosting.jsx';
 
 // Export components
 export const blogComponents = {
@@ -37,11 +40,14 @@ export const blogComponents = {
   6: BuildingAIPoweredWebApps,
   7: AIPoweredDevelopmentTools,
   8: DeveloperProductivityRevolution,
-  9: MachineLearningTensorFlowJS,
-  10: WordPressDevelopmentMastery,
-  11: SecureFormsWithoutCaptcha,
-  12: TechnicalSEOWebDevelopment,
-  13: AIJobSecurityITStudents
+  9: AutomationDeveloperWorkflows,
+  10: MachineLearningTensorFlowJS,
+  11: WordPressDevelopmentMastery,
+  12: SecureFormsWithoutCaptcha,
+  13: TechnicalSEOWebDevelopment,
+  14: AIJobSecurityITStudents,
+  15: WordPressSEODominance,
+  16: ChoosingHostingerWebHosting
 };
 
 // Export blog data
@@ -54,23 +60,26 @@ export const individualBlogPosts = [
   buildingAIPoweredWebAppsData,
   aiPoweredDevelopmentToolsData,
   developerProductivityRevolutionData,
+  automationDeveloperWorkflowsData,
   machineLearningTensorFlowJSData,
   wordPressDevelopmentMasteryData,
   secureFormsWithoutCaptchaData,
   technicalSEOWebDevelopmentData,
-  aiJobSecurityITStudentsData
+  aiJobSecurityITStudentsData,
+  wordPressSEODominanceData,
+  choosingHostingerWebHostingData
 ];
 
 // Export by category
 export const blogsByCategory = {
   'next-js': [nextJS15RevolutionaryData],
   'react': [reactPerformanceMasteryData],
-  'wordpress': [wordPressCustomPluginData, wordPressDevelopmentMasteryData],
+  'wordpress': [wordPressCustomPluginData, wordPressDevelopmentMasteryData, wordPressSEODominanceData],
   'laravel': [laravelAPIAuthenticationData],
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
-  'productivity': [developerProductivityRevolutionData],
-  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData]
+  'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData],
+  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData]
 };
 
 // Get component by slug
