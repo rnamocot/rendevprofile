@@ -1,21 +1,51 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts, blogCategories } from '../lib/BlogdataList';
 import NewsletterSignup from './components/NewsletterSignup';
 import AdSense from './components/AdSense';
+import BlogSidebar from './components/BlogSidebar';
 import Footer from '../components/layout/Footer';
 
 // Metadata will be handled by Next.js head or layout
 
 export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
   const postsPerPage = 9;
   
-  const blogPosts = getBlogPosts();
+  // Handle URL search parameter
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const search = urlParams.get('search');
+    if (search) {
+      setSearchQuery(search);
+    }
+  }, []);
+  
+  const allBlogPosts = getBlogPosts();
   const featuredPosts = getBlogPosts(3, null, true);
+  
+  // Filter posts based on search query
+  const filteredPosts = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return allBlogPosts;
+    }
+    
+    const query = searchQuery.toLowerCase();
+    return allBlogPosts.filter(post => {
+      const titleMatch = post.title.toLowerCase().includes(query);
+      const excerptMatch = post.excerpt.toLowerCase().includes(query);
+      const tagsMatch = post.tags.some(tag => tag.toLowerCase().includes(query));
+      const categoryMatch = post.category.toLowerCase().includes(query);
+      
+      return titleMatch || excerptMatch || tagsMatch || categoryMatch;
+    });
+  }, [searchQuery, allBlogPosts]);
+  
+  const blogPosts = filteredPosts;
   
   // Pagination logic
   const totalPosts = blogPosts.length;
@@ -189,17 +219,43 @@ export default function BlogPage() {
           </section>
         )}
 
-        {/* All Posts */}
-        <section id="all-articles" className="py-12 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">All Articles</h2>
-              <p className="text-gray-600">
-                Showing {((currentPage - 1) * postsPerPage) + 1} - {Math.min(currentPage * postsPerPage, totalPosts)} of {totalPosts} articles
+        {/* All Posts with Sidebar */}
+        <section id="all-articles" className="py-8 lg:py-12 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-6 lg:mb-8">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+                {searchQuery ? 'Search Results' : 'All Articles'}
+              </h2>
+              {searchQuery && (
+                <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <p className="text-blue-800 font-medium">
+                    Search results for: "{searchQuery}"
+                  </p>
+                  <p className="text-blue-600 text-sm mt-1">
+                    Found {totalPosts} article{totalPosts !== 1 ? 's' : ''}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSearchQuery('');
+                      window.history.pushState({}, '', '/blogs');
+                    }}
+                    className="mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
+                    Clear search →
+                  </button>
+                </div>
+              )}
+              <p className="text-sm lg:text-base text-gray-600">
+                Showing {totalPosts > 0 ? ((currentPage - 1) * postsPerPage) + 1 : 0} - {Math.min(currentPage * postsPerPage, totalPosts)} of {totalPosts} articles
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {paginatedPosts.map((post) => (
+            
+            <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 lg:gap-8">
+              {/* Main Content Area */}
+              <div className="xl:col-span-3">
+                {paginatedPosts.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    {paginatedPosts.map((post) => (
                 <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group">
                   <Link href={`/blogs/${post.slug}`}>
                     <div className="h-64 bg-gray-200 relative overflow-hidden">
@@ -258,12 +314,37 @@ export default function BlogPage() {
                     </div>
                   </div>
                 </article>
-              ))}
-            </div>
-            
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex justify-center items-center mt-12 space-x-2">
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12">
+                    <svg className="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">No articles found</h3>
+                    <p className="text-gray-500 mb-4">
+                      {searchQuery 
+                        ? `No articles match "${searchQuery}". Try different keywords or browse categories.`
+                        : 'No articles available at the moment.'
+                      }
+                    </p>
+                    {searchQuery && (
+                      <button
+                        onClick={() => {
+                          setSearchQuery('');
+                          window.history.pushState({}, '', '/blogs');
+                        }}
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        View All Articles
+                      </button>
+                    )}
+                  </div>
+                )}
+                
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex justify-center items-center mt-12 space-x-2">
                 {/* Previous Button */}
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
@@ -343,12 +424,19 @@ export default function BlogPage() {
                 >
                   Next
                 </button>
-              </div>
-            )}
+                  </div>
+                )}
 
-            {/* Page info */}
-            <div className="text-center mt-6 text-sm text-gray-500">
-              Page {currentPage} of {totalPages}
+                {/* Page info */}
+                <div className="text-center mt-6 text-sm text-gray-500">
+                  Page {currentPage} of {totalPages}
+                </div>
+              </div>
+              
+              {/* Sidebar */}
+              <div className="xl:col-span-1 order-last">
+                <BlogSidebar />
+              </div>
             </div>
           </div>
         </section>

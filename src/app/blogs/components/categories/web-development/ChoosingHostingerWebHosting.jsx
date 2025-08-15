@@ -44,62 +44,7 @@ export default function ChoosingHostingerWebHosting() {
   };
 
   return (
-    <>
-      <Head>
-        <title>{blogPost.title} | Renie Namocot</title>
-        <meta name="description" content={blogPost.excerpt} />
-        <meta name="keywords" content={blogPost.tags.join(', ')} />
-        <meta property="og:title" content={blogPost.title} />
-        <meta property="og:description" content={blogPost.excerpt} />
-        <meta property="og:image" content={blogPost.featuredImageUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="article:author" content={blogPost.author} />
-        <meta property="article:published_time" content={blogPost.publishDate} />
-        <meta property="article:modified_time" content={blogPost.lastModified} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={blogPost.title} />
-        <meta name="twitter:description" content={blogPost.excerpt} />
-        <meta name="twitter:image" content={blogPost.featuredImageUrl} />
-        <link rel="canonical" href={`https://renienamocot.com/blogs/${blogPost.slug}`} />
-        <script 
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-
-      <article className="max-w-4xl mx-auto px-4 py-8">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            {blogPost.title}
-          </h1>
-          <div className="flex items-center gap-4 text-gray-600 mb-4">
-            <span>By {blogPost.author}</span>
-            <span>•</span>
-            <time dateTime={blogPost.publishDate}>
-              {new Date(blogPost.publishDate).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-            <span>•</span>
-            <span>{blogPost.readTime}</span>
-          </div>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {blogPost.tags.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <img 
-            src={blogPost.featuredImageUrl} 
-            alt={blogPost.title}
-            className="w-full h-64 object-cover rounded-lg"
-          />
-        </header>
-
-        <div className="prose prose-lg max-w-none">
+    <div className="prose prose-lg max-w-none">
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
             <p className="text-lg font-medium text-blue-900 mb-3">🚀 Ready to Get Started with Hostinger?</p>
             <p className="text-blue-800 mb-4">Get the best hosting deals and start building your dream website today!</p>
@@ -130,37 +75,39 @@ export default function ChoosingHostingerWebHosting() {
 
           <h4>Real Performance Metrics</h4>
           <p>Based on independent testing and user reports:</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Metric</th>
-                <th>Hostinger</th>
-                <th>Industry Average</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Page Load Time</td>
-                <td>1.2 seconds</td>
-                <td>2.5 seconds</td>
-              </tr>
-              <tr>
-                <td>Uptime</td>
-                <td>99.9%</td>
-                <td>99.5%</td>
-              </tr>
-              <tr>
-                <td>TTFB (Time to First Byte)</td>
-                <td>200ms</td>
-                <td>600ms</td>
-              </tr>
-              <tr>
-                <td>Core Web Vitals Score</td>
-                <td>95/100</td>
-                <td>75/100</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Hostinger</th>
+                  <th>Industry Average</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Page Load Time</td>
+                  <td>1.2 seconds</td>
+                  <td>2.5 seconds</td>
+                </tr>
+                <tr>
+                  <td>Uptime</td>
+                  <td>99.9%</td>
+                  <td>99.5%</td>
+                </tr>
+                <tr>
+                  <td>TTFB (Time to First Byte)</td>
+                  <td>200ms</td>
+                  <td>600ms</td>
+                </tr>
+                <tr>
+                  <td>Core Web Vitals Score</td>
+                  <td>95/100</td>
+                  <td>75/100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           
           <h3>Developer-Friendly Features</h3>
           <h4>Modern Development Stack</h4>
@@ -270,7 +217,8 @@ add_action('init', 'add_security_headers');`}</code></pre>
           
           <h3>Pricing That Makes Sense</h3>
           <h4>Hostinger Plans Comparison</h4>
-          <table>
+          <div className="table-responsive">
+            <table>
             <thead>
               <tr>
                 <th>Plan</th>
@@ -310,7 +258,8 @@ add_action('init', 'add_security_headers');`}</code></pre>
                 <td>High-traffic sites</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
 
           <div className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
             <p className="text-lg font-medium text-green-900 mb-3">💰 Special Offer Available!</p>
@@ -358,7 +307,8 @@ add_action('init', 'add_security_headers');`}</code></pre>
           </ul>
 
           <h4>Support Quality Metrics</h4>
-          <table>
+          <div className="table-responsive">
+            <table>
             <thead>
               <tr>
                 <th>Metric</th>
@@ -388,7 +338,8 @@ add_action('init', 'add_security_headers');`}</code></pre>
                 <td>Email only</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
           
           <h3>Control Panel and User Experience</h3>
           <h4>hPanel: Modern Hosting Management</h4>
@@ -476,7 +427,8 @@ mysqldump -u username -p database_name > backup.sql
           </ul>
 
           <h4>Performance Optimization Features</h4>
-          <table>
+          <div className="table-responsive">
+            <table>
             <thead>
               <tr>
                 <th>Feature</th>
@@ -517,7 +469,8 @@ mysqldump -u username -p database_name > backup.sql
                 <td>✅</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
           
           <h3>E-commerce and Business Features</h3>
           <h4>Perfect for Online Stores</h4>
@@ -554,7 +507,8 @@ Security: SSL/TLS
           
           <h3>Why Choose Hostinger Over Competitors</h3>
           <h4>Hostinger vs. Major Competitors</h4>
-          <table>
+          <div className="table-responsive">
+            <table>
             <thead>
               <tr>
                 <th>Feature</th>
@@ -601,7 +555,8 @@ Security: SSL/TLS
                 <td>Good</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
           
           <h3>Getting Started with Hostinger</h3>
           <h4>Step-by-Step Setup Guide</h4>
@@ -658,8 +613,6 @@ Security: SSL/TLS
             </a>
             <p className="text-sm text-blue-600 mt-3">*Special pricing available through this exclusive link</p>
           </div>
-        </div>
-      </article>
-    </>
+    </div>
   );
 }

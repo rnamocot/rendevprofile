@@ -1,0 +1,128 @@
+/* Responsive Blog Styles */
+
+/* Table Responsiveness */
+.table-responsive {
+  @apply overflow-x-auto my-6 rounded-lg border border-gray-200 shadow-sm;
+}
+
+.table-responsive table {
+  @apply min-w-full divide-y divide-gray-200 bg-white text-sm;
+}
+
+.table-responsive th {
+  @apply px-3 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50;
+  white-space: nowrap;
+}
+
+.table-responsive td {
+  @apply px-3 sm:px-4 py-2 sm:py-3 text-gray-900 border-b border-gray-200;
+  word-break: break-word;
+}
+
+.table-responsive tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.table-responsive tbody tr:hover {
+  @apply bg-gray-100;
+}
+
+/* Mobile Table Styles */
+@media (max-width: 640px) {
+  .table-responsive {
+    @apply -mx-4 rounded-none border-x-0;
+  }
+  
+  .table-responsive th {
+    @apply px-2 py-2 text-xs;
+  }
+  
+  .table-responsive td {
+    @apply px-2 py-2 text-xs;
+  }
+}
+
+/* Blog Content Responsive Images */
+.blog-content img {
+  @apply max-w-full h-auto rounded-lg shadow-sm my-4;
+}
+
+/* Responsive Code Blocks */
+.blog-content pre {
+  @apply overflow-x-auto text-sm;
+}
+
+.blog-content pre code {
+  @apply block p-4 rounded-lg;
+}
+
+/* Mobile Prose Adjustments */
+@media (max-width: 640px) {
+  .blog-content {
+    @apply prose-sm;
+  }
+  
+  .blog-content h1 {
+    @apply text-2xl;
+  }
+  
+  .blog-content h2 {
+    @apply text-xl;
+  }
+  
+  .blog-content h3 {
+    @apply text-lg;
+  }
+  
+  .blog-content h4 {
+    @apply text-base;
+  }
+}
+
+/* Responsive List Styles */
+.blog-content ul, .blog-content ol {
+  @apply pl-4 sm:pl-6;
+}
+
+/* Mobile Code Block Adjustments */
+@media (max-width: 640px) {
+  .blog-content pre {
+    @apply -mx-4 rounded-none text-xs;
+  }
+  
+  .blog-content pre code {
+    @apply p-3;
+  }
+  
+  .blog-content code:not(pre code) {
+    @apply text-xs px-1;
+  }
+}
+
+/* Responsive Blockquotes */
+.blog-content blockquote {
+  @apply border-l-4 border-gray-300 pl-4 sm:pl-6 py-2 my-4 bg-gray-50 rounded-r-lg;
+}
+
+/* CTA Buttons Responsiveness */
+.blog-content a[style*="background"] {
+  @apply block sm:inline-block w-full sm:w-auto text-center mb-4 sm:mb-0;
+}
+
+/* Responsive Spacing */
+.blog-content > * + * {
+  @apply mt-4 sm:mt-6;
+}
+
+.blog-content h2 + *, 
+.blog-content h3 + *, 
+.blog-content h4 + * {
+  @apply mt-3 sm:mt-4;
+}
+
+/* Mobile-friendly content width */
+@media (max-width: 640px) {
+  .blog-content {
+    @apply text-sm leading-relaxed;
+  }
+}
