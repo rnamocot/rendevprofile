@@ -16,6 +16,7 @@ import NextJS15Revolutionary, { blogPost as nextJS15RevolutionaryData } from './
 // Productivity Components
 import DeveloperProductivityRevolution, { blogPost as developerProductivityRevolutionData } from './categories/productivity/DeveloperProductivityRevolution.jsx';
 import AutomationDeveloperWorkflows, { blogPost as automationDeveloperWorkflowsData } from './categories/productivity/AutomationDeveloperWorkflows.jsx';
+import GitCheatsheet, { blogPost as gitCheatsheetData } from './categories/productivity/GitCheatsheet.jsx';
 
 // React Components
 import ReactPerformanceMastery, { blogPost as reactPerformanceMasteryData } from './categories/react/ReactPerformanceMastery.jsx';
@@ -47,7 +48,8 @@ export const blogComponents = {
   13: TechnicalSEOWebDevelopment,
   14: AIJobSecurityITStudents,
   15: WordPressSEODominance,
-  16: ChoosingHostingerWebHosting
+  16: ChoosingHostingerWebHosting,
+  17: GitCheatsheet
 };
 
 // Export blog data
@@ -67,7 +69,8 @@ export const individualBlogPosts = [
   technicalSEOWebDevelopmentData,
   aiJobSecurityITStudentsData,
   wordPressSEODominanceData,
-  choosingHostingerWebHostingData
+  choosingHostingerWebHostingData,
+  gitCheatsheetData
 ];
 
 // Export by category
@@ -78,7 +81,7 @@ export const blogsByCategory = {
   'laravel': [laravelAPIAuthenticationData],
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
-  'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData],
+  'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData],
   'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData]
 };
 
