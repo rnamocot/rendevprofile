@@ -30,6 +30,7 @@ import WordPressSEODominance, { blogPost as wordPressSEODominanceData } from './
 import SecureFormsWithoutCaptcha, { blogPost as secureFormsWithoutCaptchaData } from './categories/web-development/SecureFormsWithoutCaptcha.jsx';
 import TechnicalSEOWebDevelopment, { blogPost as technicalSEOWebDevelopmentData } from './categories/web-development/TechnicalSEOWebDevelopment.jsx';
 import ChoosingHostingerWebHosting, { blogPost as choosingHostingerWebHostingData } from './categories/web-development/ChoosingHostingerWebHosting.jsx';
+import CloudflareR2PresignedURLs, { blogPost as cloudflareR2PresignedURLsData } from './categories/web-development/CloudflareR2PresignedURLs.jsx';
 
 // Export components
 export const blogComponents = {
@@ -49,7 +50,8 @@ export const blogComponents = {
   14: AIJobSecurityITStudents,
   15: WordPressSEODominance,
   16: ChoosingHostingerWebHosting,
-  17: GitCheatsheet
+  17: GitCheatsheet,
+  18: CloudflareR2PresignedURLs
 };
 
 // Export blog data
@@ -70,7 +72,8 @@ export const individualBlogPosts = [
   aiJobSecurityITStudentsData,
   wordPressSEODominanceData,
   choosingHostingerWebHostingData,
-  gitCheatsheetData
+  gitCheatsheetData,
+  cloudflareR2PresignedURLsData
 ];
 
 // Export by category
@@ -82,7 +85,7 @@ export const blogsByCategory = {
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
   'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData],
-  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData]
+  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData, cloudflareR2PresignedURLsData]
 };
 
 // Get component by slug
