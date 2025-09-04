@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts, getBlogCategory, blogCategories } from '../../../lib/BlogdataList';
-import AdSense from '../../components/AdSense';
 import Footer from '../../../components/layout/Footer';
 
 export async function generateMetadata({ params }) {
@@ -131,12 +130,6 @@ export default async function CategoryPage({ params }) {
           </div>
         </section>
 
-        {/* AdSense Ad - Top Banner */}
-        <section className="py-8 bg-white border-b border-gray-200">
-          <div className="container mx-auto px-6 lg:px-8 text-center">
-            <AdSense />
-          </div>
-        </section>
 
         {/* Category Navigation */}
         <section className="py-8 bg-white">
@@ -220,15 +213,6 @@ export default async function CategoryPage({ params }) {
                         </Link>
                       </div>
                     </div>
-                    
-                    {/* Insert AdSense ad after every 3rd article */}
-                    {(index + 1) % 3 === 0 && index !== posts.length - 1 && (
-                      <div className="col-span-full my-8">
-                        <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-                          <AdSense />
-                        </div>
-                      </div>
-                    )}
                   </article>
                 ))}
               </div>
@@ -254,12 +238,6 @@ export default async function CategoryPage({ params }) {
           </section>
         )}
 
-        {/* AdSense Ad - Bottom Banner */}
-        <section className="py-12 bg-white border-t border-gray-200">
-          <div className="container mx-auto px-6 lg:px-8 text-center">
-            <AdSense />
-          </div>
-        </section>
 
         {/* Related Categories */}
         <section className="py-16 bg-blue-600">

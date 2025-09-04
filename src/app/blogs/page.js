@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts, blogCategories } from '../lib/BlogdataList';
 import NewsletterSignup from './components/NewsletterSignup';
-import AdSense from './components/AdSense';
 import BlogSidebar from './components/BlogSidebar';
 import Footer from '../components/layout/Footer';
 
@@ -441,12 +440,6 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* AdSense Ad - Below Recent Posts */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-8 text-center">
-            <AdSense />
-          </div>
-        </section>
 
         {/* Newsletter Signup - Redesigned */}
         <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
