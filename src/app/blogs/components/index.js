@@ -9,9 +9,13 @@ import ModernJavaScriptES2024, { blogPost as modernJavaScriptES2024Data } from '
 
 // Laravel Components
 import LaravelAPIAuthentication, { blogPost as laravelAPIAuthenticationData } from './categories/laravel/LaravelAPIAuthentication.jsx';
+import LaravelLivewireInertia, { blogPost as laravelLivewireInertiaData } from './categories/laravel/LaravelLivewireInertia.jsx';
 
 // Next.js Components
 import NextJS15Revolutionary, { blogPost as nextJS15RevolutionaryData } from './categories/next-js/NextJS15Revolutionary.jsx';
+
+// PHP Components
+import PHP9Revolutionary, { blogPost as php9RevolutionaryData } from './categories/php/PHP9Revolutionary.jsx';
 
 // Productivity Components
 import DeveloperProductivityRevolution, { blogPost as developerProductivityRevolutionData } from './categories/productivity/DeveloperProductivityRevolution.jsx';
@@ -51,7 +55,9 @@ export const blogComponents = {
   15: WordPressSEODominance,
   16: ChoosingHostingerWebHosting,
   17: GitCheatsheet,
-  18: CloudflareR2PresignedURLs
+  18: CloudflareR2PresignedURLs,
+  19: PHP9Revolutionary,
+  20: LaravelLivewireInertia
 };
 
 // Export blog data
@@ -73,7 +79,9 @@ export const individualBlogPosts = [
   wordPressSEODominanceData,
   choosingHostingerWebHostingData,
   gitCheatsheetData,
-  cloudflareR2PresignedURLsData
+  cloudflareR2PresignedURLsData,
+  php9RevolutionaryData,
+  laravelLivewireInertiaData
 ];
 
 // Export by category
@@ -81,7 +89,8 @@ export const blogsByCategory = {
   'next-js': [nextJS15RevolutionaryData],
   'react': [reactPerformanceMasteryData],
   'wordpress': [wordPressCustomPluginData, wordPressDevelopmentMasteryData, wordPressSEODominanceData],
-  'laravel': [laravelAPIAuthenticationData],
+  'laravel': [laravelAPIAuthenticationData, laravelLivewireInertiaData],
+  'php': [php9RevolutionaryData],
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
   'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData],
