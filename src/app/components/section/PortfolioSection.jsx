@@ -79,7 +79,7 @@ export default function PortfolioSection() {
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {projects.map((project, index) => (
-            <div key={index} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-200">
+            <div key={index} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-200 relative">
               <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
                 <Image
                   src={project.image}
@@ -87,16 +87,7 @@ export default function PortfolioSection() {
                   fill
                   className="object-cover transition-transform duration-200 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/20 transition-colors duration-200"></div>
-                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <a
-                    href={project.liveUrl}
-                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
-                    aria-label="View live project"
-                  >
-                    <ExternalLink className="w-3 h-3 text-gray-900" />
-                  </a>
-                </div>
+                <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/20 transition-colors duration-200 pointer-events-none"></div>
                 {project.featured && (
                   <div className="absolute top-3 left-3">
                     <span className="text-xs px-2 py-1 bg-blue-600 text-white rounded-full font-medium">
@@ -104,6 +95,17 @@ export default function PortfolioSection() {
                     </span>
                   </div>
                 )}
+              </div>
+              
+              {/* Button moved outside of image container */}
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+                <a
+                  href={project.liveUrl}
+                  className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                  aria-label="View live project"
+                >
+                  <ExternalLink className="w-3 h-3 text-gray-900" />
+                </a>
               </div>
               
               <div className="p-6">

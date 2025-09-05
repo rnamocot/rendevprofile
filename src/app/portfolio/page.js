@@ -661,7 +661,7 @@ export default function PortfolioPage() {
                 filteredProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className={`project-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 overflow-hidden relative ${
+                    className={`project-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 relative ${
                       viewMode === 'list' ? 'flex flex-col lg:flex-row' : ''
                     }`}
                     style={{
@@ -669,8 +669,8 @@ export default function PortfolioPage() {
                     }}
                   >
                     {/* Enhanced Image Section */}
-                    <div className={`relative overflow-hidden bg-gray-100 ${
-                      viewMode === 'list' ? 'lg:w-80 aspect-[4/3] lg:aspect-auto' : 'aspect-[4/3]'
+                    <div className={`relative overflow-hidden bg-gray-100 rounded-t-2xl ${
+                      viewMode === 'list' ? 'lg:w-80 aspect-[4/3] lg:aspect-auto lg:rounded-l-2xl lg:rounded-tr-none' : 'aspect-[4/3]'
                     }`}>
                       <Image
                         src={project.image}
@@ -680,31 +680,7 @@ export default function PortfolioPage() {
                       />
                       
                       {/* Enhanced Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-500"></div>
-                      
-                      {/* Floating Action Buttons */}
-                      <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-all duration-200 shadow-lg hover:scale-110"
-                          aria-label="View live project"
-                        >
-                          <ExternalLink className="w-4 h-4 text-gray-900" />
-                        </a>
-                        {project.githubUrl !== '#' && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-all duration-200 shadow-lg hover:scale-110"
-                            aria-label="View source code"
-                          >
-                            <Github className="w-4 h-4 text-gray-900" />
-                          </a>
-                        )}
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-500 pointer-events-none"></div>
                       
                       {/* Enhanced Badges */}
                       <div className="absolute top-4 left-4 flex gap-2">
@@ -720,20 +696,44 @@ export default function PortfolioPage() {
                       </div>
                       
                       {/* Bottom Info Overlay */}
-                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                         <div className="flex items-center justify-between text-xs text-white">
                           <span className="bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full font-medium">
                             {project.year}
                           </span>
                           <button 
                             onClick={() => setSelectedProject(project)}
-                            className="bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full font-medium hover:bg-black/80 transition-colors flex items-center gap-1"
+                            className="bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full font-medium hover:bg-black/80 transition-colors flex items-center gap-1 relative z-30"
                           >
                             <Eye className="w-3 h-3" />
                             Details
                           </button>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Floating Action Buttons - Outside Image Container */}
+                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                        aria-label="View live project"
+                      >
+                        <ExternalLink className="w-4 h-4 text-gray-900" />
+                      </a>
+                      {project.githubUrl !== '#' && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                          aria-label="View source code"
+                        >
+                          <Github className="w-4 h-4 text-gray-900" />
+                        </a>
+                      )}
                     </div>
                     
                     {/* Enhanced Content Section */}
