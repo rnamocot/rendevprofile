@@ -101,7 +101,7 @@ export default function FastWebsitePageInsights() {
 
         <div className="prose prose-lg max-w-none">
           <h2>Introduction</h2>
-          <p>In today's digital landscape, website speed isn't just a luxury—it's a necessity. Google's PageSpeed Insights has become the gold standard for measuring website performance, and achieving high scores can dramatically impact your SEO rankings, user experience, and conversion rates.</p>
+          <p>In today's digital landscape, website speed isn't just a luxury - it's a necessity. Google's PageSpeed Insights has become the gold standard for measuring website performance, and achieving high scores can dramatically impact your SEO rankings, user experience, and conversion rates.</p>
 
           <p>This comprehensive guide will take you through everything you need to know about building lightning-fast websites that consistently score 90+ on PageSpeed Insights. We'll cover the technical fundamentals, practical optimization techniques, and real-world strategies that separate fast websites from the rest.</p>
 
@@ -112,7 +112,7 @@ export default function FastWebsitePageInsights() {
           <h2>Understanding PageSpeed Insights and Core Web Vitals</h2>
           
           <h3>What is PageSpeed Insights?</h3>
-          <p>PageSpeed Insights is Google's free tool that analyzes web page performance on both mobile and desktop devices. It provides actionable recommendations and measures your site against Core Web Vitals—Google's set of real-world, user-centered metrics for loading, interactivity, and visual stability.</p>
+          <p>PageSpeed Insights is Google's free tool that analyzes web page performance on both mobile and desktop devices. It provides actionable recommendations and measures your site against Core Web Vitals - Google's set of real-world, user-centered metrics for loading, interactivity, and visual stability.</p>
 
           <h3>Core Web Vitals: The Three Pillars</h3>
           
@@ -342,7 +342,7 @@ export default function FastWebsitePageInsights() {
           </div>
 
           <h2>Conclusion</h2>
-          <p>Building fast websites that achieve excellent PageSpeed Insights scores requires a holistic approach that considers every aspect of web development—from image optimization and code splitting to server configuration and monitoring.</p>
+          <p>Building fast websites that achieve excellent PageSpeed Insights scores requires a holistic approach that considers every aspect of web development - from image optimization and code splitting to server configuration and monitoring.</p>
 
           <div className="bg-green-50 p-6 rounded-lg my-8">
             <h3 className="text-green-800 font-semibold mb-4">Key Takeaways for Fast Websites:</h3>
@@ -359,10 +359,10 @@ export default function FastWebsitePageInsights() {
 
           <p>Remember that performance optimization is an ongoing process, not a one-time task. As your website grows and evolves, regularly audit your performance metrics, update your optimization strategies, and stay current with the latest web performance best practices.</p>
 
-          <p>The investment in creating fast websites pays dividends in improved user experience, higher search rankings, increased conversions, and reduced bounce rates. Start implementing these techniques today, and watch your PageSpeed Insights scores—and business metrics—improve dramatically.</p>
+          <p>The investment in creating fast websites pays dividends in improved user experience, higher search rankings, increased conversions, and reduced bounce rates. Start implementing these techniques today, and watch your PageSpeed Insights scores - and business metrics - improve dramatically.</p>
 
           <blockquote className="border-l-4 border-green-500 pl-4 italic text-gray-700 my-6">
-            "Performance is not just about fast loading—it's about creating seamless, delightful user experiences that keep visitors engaged and coming back for more."
+            "Performance is not just about fast loading - it's about creating seamless, delightful user experiences that keep visitors engaged and coming back for more."
           </blockquote>
         </div>
       </article>

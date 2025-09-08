@@ -21,6 +21,7 @@ import PHP9Revolutionary, { blogPost as php9RevolutionaryData } from './categori
 import DeveloperProductivityRevolution, { blogPost as developerProductivityRevolutionData } from './categories/productivity/DeveloperProductivityRevolution.jsx';
 import AutomationDeveloperWorkflows, { blogPost as automationDeveloperWorkflowsData } from './categories/productivity/AutomationDeveloperWorkflows.jsx';
 import GitCheatsheet, { blogPost as gitCheatsheetData } from './categories/productivity/GitCheatsheet.jsx';
+import FindingYourLearningPace, { blogPost as findingYourLearningPaceData } from './categories/productivity/FindingYourLearningPace.jsx';
 
 // React Components
 import ReactPerformanceMastery, { blogPost as reactPerformanceMasteryData } from './categories/react/ReactPerformanceMastery.jsx';
@@ -59,7 +60,8 @@ export const blogComponents = {
   18: CloudflareR2PresignedURLs,
   19: PHP9Revolutionary,
   20: LaravelLivewireInertia,
-  21: FastWebsitePageInsights
+  21: FastWebsitePageInsights,
+  22: FindingYourLearningPace
 };
 
 // Export blog data
@@ -84,7 +86,8 @@ export const individualBlogPosts = [
   cloudflareR2PresignedURLsData,
   php9RevolutionaryData,
   laravelLivewireInertiaData,
-  fastWebsitePageInsightsData
+  fastWebsitePageInsightsData,
+  findingYourLearningPaceData
 ];
 
 // Export by category
@@ -96,7 +99,7 @@ export const blogsByCategory = {
   'php': [php9RevolutionaryData],
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
-  'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData],
+  'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData, findingYourLearningPaceData],
   'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData, cloudflareR2PresignedURLsData, fastWebsitePageInsightsData]
 };
 
