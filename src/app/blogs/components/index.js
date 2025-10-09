@@ -3,6 +3,7 @@ import BuildingAIPoweredWebApps, { blogPost as buildingAIPoweredWebAppsData } fr
 import AIPoweredDevelopmentTools, { blogPost as aiPoweredDevelopmentToolsData } from './categories/ai-development/AIPoweredDevelopmentTools.jsx';
 import MachineLearningTensorFlowJS, { blogPost as machineLearningTensorFlowJSData } from './categories/ai-development/MachineLearningTensorFlowJS.jsx';
 import AIJobSecurityITStudents, { blogPost as aiJobSecurityITStudentsData } from './categories/ai-development/AIJobSecurityITStudents.jsx';
+import AIVibeCodersNotForBeginners, { blogPost as aiVibeCodersNotForBeginnersData } from './categories/ai-development/AIVibeCodersNotForBeginners.jsx';
 
 // JavaScript Components
 import ModernJavaScriptES2024, { blogPost as modernJavaScriptES2024Data } from './categories/javascript/ModernJavaScriptES2024.jsx';
@@ -61,7 +62,8 @@ export const blogComponents = {
   19: PHP9Revolutionary,
   20: LaravelLivewireInertia,
   21: FastWebsitePageInsights,
-  22: FindingYourLearningPace
+  22: FindingYourLearningPace,
+  23: AIVibeCodersNotForBeginners
 };
 
 // Export blog data
@@ -87,7 +89,8 @@ export const individualBlogPosts = [
   php9RevolutionaryData,
   laravelLivewireInertiaData,
   fastWebsitePageInsightsData,
-  findingYourLearningPaceData
+  findingYourLearningPaceData,
+  aiVibeCodersNotForBeginnersData
 ];
 
 // Export by category
@@ -98,7 +101,7 @@ export const blogsByCategory = {
   'laravel': [laravelAPIAuthenticationData, laravelLivewireInertiaData],
   'php': [php9RevolutionaryData],
   'javascript': [modernJavaScriptES2024Data],
-  'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData],
+  'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData, aiVibeCodersNotForBeginnersData],
   'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData, findingYourLearningPaceData],
   'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData, cloudflareR2PresignedURLsData, fastWebsitePageInsightsData]
 };
