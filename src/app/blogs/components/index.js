@@ -38,6 +38,7 @@ import TechnicalSEOWebDevelopment, { blogPost as technicalSEOWebDevelopmentData 
 import ChoosingHostingerWebHosting, { blogPost as choosingHostingerWebHostingData } from './categories/web-development/ChoosingHostingerWebHosting.jsx';
 import CloudflareR2PresignedURLs, { blogPost as cloudflareR2PresignedURLsData } from './categories/web-development/CloudflareR2PresignedURLs.jsx';
 import FastWebsitePageInsights, { blogPost as fastWebsitePageInsightsData } from './categories/web-development/FastWebsitePageInsights.jsx';
+import CloudflareWebsiteProtection, { blogPost as cloudflareWebsiteProtectionData } from './categories/web-development/CloudflareWebsiteProtection.jsx';
 
 // Export components
 export const blogComponents = {
@@ -63,7 +64,8 @@ export const blogComponents = {
   20: LaravelLivewireInertia,
   21: FastWebsitePageInsights,
   22: FindingYourLearningPace,
-  23: AIVibeCodersNotForBeginners
+  23: AIVibeCodersNotForBeginners,
+  24: CloudflareWebsiteProtection
 };
 
 // Export blog data
@@ -90,7 +92,8 @@ export const individualBlogPosts = [
   laravelLivewireInertiaData,
   fastWebsitePageInsightsData,
   findingYourLearningPaceData,
-  aiVibeCodersNotForBeginnersData
+  aiVibeCodersNotForBeginnersData,
+  cloudflareWebsiteProtectionData
 ];
 
 // Export by category
@@ -103,7 +106,7 @@ export const blogsByCategory = {
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData, aiVibeCodersNotForBeginnersData],
   'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData, findingYourLearningPaceData],
-  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData, cloudflareR2PresignedURLsData, fastWebsitePageInsightsData]
+  'web-development': [secureFormsWithoutCaptchaData, technicalSEOWebDevelopmentData, choosingHostingerWebHostingData, cloudflareR2PresignedURLsData, fastWebsitePageInsightsData, cloudflareWebsiteProtectionData]
 };
 
 // Get component by slug
