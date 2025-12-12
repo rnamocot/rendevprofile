@@ -17,6 +17,7 @@ import NextJS15Revolutionary, { blogPost as nextJS15RevolutionaryData } from './
 
 // PHP Components
 import PHP9Revolutionary, { blogPost as php9RevolutionaryData } from './categories/php/PHP9Revolutionary.jsx';
+import PHPStillOnTop, { blogPost as phpStillOnTopData } from './categories/php/PHPStillOnTop.jsx';
 
 // Productivity Components
 import DeveloperProductivityRevolution, { blogPost as developerProductivityRevolutionData } from './categories/productivity/DeveloperProductivityRevolution.jsx';
@@ -65,7 +66,8 @@ export const blogComponents = {
   21: FastWebsitePageInsights,
   22: FindingYourLearningPace,
   23: AIVibeCodersNotForBeginners,
-  24: CloudflareWebsiteProtection
+  24: CloudflareWebsiteProtection,
+  25: PHPStillOnTop
 };
 
 // Export blog data
@@ -93,7 +95,8 @@ export const individualBlogPosts = [
   fastWebsitePageInsightsData,
   findingYourLearningPaceData,
   aiVibeCodersNotForBeginnersData,
-  cloudflareWebsiteProtectionData
+  cloudflareWebsiteProtectionData,
+  phpStillOnTopData
 ];
 
 // Export by category
@@ -102,7 +105,7 @@ export const blogsByCategory = {
   'react': [reactPerformanceMasteryData],
   'wordpress': [wordPressCustomPluginData, wordPressDevelopmentMasteryData, wordPressSEODominanceData],
   'laravel': [laravelAPIAuthenticationData, laravelLivewireInertiaData],
-  'php': [php9RevolutionaryData],
+  'php': [php9RevolutionaryData, phpStillOnTopData],
   'javascript': [modernJavaScriptES2024Data],
   'ai-development': [buildingAIPoweredWebAppsData, aiPoweredDevelopmentToolsData, machineLearningTensorFlowJSData, aiJobSecurityITStudentsData, aiVibeCodersNotForBeginnersData],
   'productivity': [developerProductivityRevolutionData, automationDeveloperWorkflowsData, gitCheatsheetData, findingYourLearningPaceData],
